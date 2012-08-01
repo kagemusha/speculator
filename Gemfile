@@ -19,3 +19,6 @@ gem "cancan", ">= 1.6.8"
 gem "rolify", ">= 3.1.0"
 gem "bootstrap-sass", ">= 2.0.4.0"
 gem "simple_form"
+gem "nokogiri"
+gem 'rails_admin', ">= 0.0.5" #:git => 'git://github.com/sferik/rails_admin.git'
+

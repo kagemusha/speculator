@@ -1,0 +1,16 @@
+- if stmts.length > 0
+  - st = stmts[0]
+  - cur = st.currency
+  - units = st.units
+  %table.fin_stmt
+    %tr
+      %th.type
+        %strong #{title}
+        %span.units #{cur}#{units ? "-#{units[0]}" : ""}
+      - stmts.each do |st|
+        %th.val=st.formatted_period
+    - attrs.each do |attr|
+      %tr
+        %td=stmts[0].label(attr)
+        - stmts.each do |st|
+          %td.val=number_with_precision(st[attr], :delimiter=>",", :precision=>0)

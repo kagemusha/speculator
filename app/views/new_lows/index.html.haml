@@ -1,0 +1,18 @@
+//this is both the page for list of new lows dates and new lows for a specific date
+%h1
+  //page for new lows for a specific date
+  New Lows #{@date}
+  - if @date
+    #new_low_total &nbsp;&nbsp;&nbsp;(#{@new_lows.length} total)
+- if @date
+  = render :partial=>"new_lows/daily_index", :locals=>{:new_lows=>@new_lows}
+- else
+  //page for list of new lows dates
+  %ul
+    - @date_counts.each do |dc|
+      %li
+        #{link_to dc[0], "/new_lows/#{dc[0]}", :class=>"new_low_date_link"}
+        (#{dc[1]})
+
+
+= js 'initNewLowsPg'

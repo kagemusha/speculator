@@ -1,0 +1,29 @@
+#links
+  - new_lows.each do |low|
+    - if stock ||= low.stock
+      - klass = stock.not_short_target ?  ["display_link","not_target"] : "display_link"
+      %div{:class=>klass}=link_to stock.symbol, "##{stock_panel_id(stock.symbol)}"
+
+- new_lows.each do |low|
+  - if stock ||= low.stock
+    - not_short_reason = stock.not_short_target
+    - div_id=stock_panel_id(stock.symbol)
+    - headline_klass = not_short_reason ? ["not_target","stock_headline"] : "stock_headline"
+    .stock_main{:id=>div_id}
+
+      %div{:id=>stock.symbol, :class=>headline_klass}
+        - #STOCK HEADLINE PANEL hide this when show .stock_panel
+        .display_link=link_to "Show", "##{div_id}",  :class=>["view_stock", "showPanel"], :symbol=>stock.symbol
+        .stock=stock.symbol
+        .exch
+          (#{stock.exch})
+        %span=stock.company_name
+        - collapse_reason = stock.not_short_target
+        - if not_short_reason
+          %span.fails_criteria=not_short_reason
+        %br
+
+      %div{:id=>stock.symbol, :class=>"stock_panel"}
+        - #hide this when not short target
+        - if !not_short_reason
+          = render :partial=>"stocks/show", :locals=>{:symbol=>stock.symbol,:stock=>stock, :cur_data=>stock.current_data, :url=>div_id}

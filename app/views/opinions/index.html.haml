@@ -1,0 +1,24 @@
+%h1 Listing opinions
+%br
+%br
+
+%table
+  %tr
+    %th Updated
+    %th Symbol
+    %th Opinion
+    %th Actions
+
+  - @opinions.each do |opinion|
+    - stock = opinion.stock
+    %tr
+      %td= opinion.updated_at
+      %td= link_to stock.symbol, "/stocks/#{stock.id}"
+      %td= opinion.action
+      %td
+        = link_to 'Show', opinion
+        &nbsp;&nbsp;
+        = link_to 'Edit', edit_opinion_path(opinion)
+        &nbsp;&nbsp;
+        = link_to 'Destroy', opinion, :confirm => 'Are you sure?', :method => :delete
+

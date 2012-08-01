@@ -1,0 +1,16 @@
+- opinion ||= Opinion.new
+= simple_form_for(opinion) do |f|
+  = f.error_notification
+  .form-inputs{:id=>stock.id}
+    = hidden_field_tag "stock_id", stock.id
+    = hidden_field_tag "symbol", stock.symbol
+    = f.input :killer
+    = f.input :sales_comments, :as => :text, :input_html => { :cols => 40, :rows => 2 }
+    = f.input :pl_comments, :as => :text, :input_html => { :cols => 40, :rows => 2 }
+    = f.input :bs_comments, :as => :text, :input_html => { :cols => 40, :rows => 2 }
+    = f.input :cf_comments, :as => :text, :input_html => { :cols => 40, :rows => 2 }
+    = f.input :credit_rating
+    = f.input :general_comments, :as => :text, :input_html => { :cols => 40, :rows => 2 }
+    = f.select :action, Opinion::ACTIONS, {:include_blank => "(Select an action)"}
+    %br
+    = link_to "Save", "#", :class=>["opinion_submit","btn"]

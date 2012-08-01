@@ -1,0 +1,688 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf360
+{\fonttbl\f0\fnil\fcharset0 Georgia;}
+{\colortbl;\red255\green255\blue255;}
+\margl1011\margr1011\margb1445\margt1011\vieww13700\viewh16000\viewkind1\viewscale161
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\fi722\sl288\slmult1\ql\qnatural\pardirnatural
+
+\f0\fs24 \cf0 Michaels-MacBook-Pro:rails_proj michael$ rails new speculator -m https://github.com/RailsApps/rails3-application-templates/raw/master/rails3-mongoid-devise-template.rb -T -O\
+      create  \
+      create  README.rdoc\
+      create  Rakefile\
+      create  config.ru\
+      create  .gitignore\
+      create  Gemfile\
+      create  app\
+      create  app/assets/images/rails.png\
+      create  app/assets/javascripts/application.js\
+      create  app/assets/stylesheets/application.css\
+      create  app/controllers/application_controller.rb\
+      create  app/helpers/application_helper.rb\
+      create  app/mailers\
+      create  app/models\
+      create  app/views/layouts/application.html.erb\
+      create  app/mailers/.gitkeep\
+      create  app/models/.gitkeep\
+      create  config\
+      create  config/routes.rb\
+      create  config/application.rb\
+      create  config/environment.rb\
+      create  config/environments\
+      create  config/environments/development.rb\
+      create  config/environments/production.rb\
+      create  config/environments/test.rb\
+      create  config/initializers\
+      create  config/initializers/backtrace_silencers.rb\
+      create  config/initializers/inflections.rb\
+      create  config/initializers/mime_types.rb\
+      create  config/initializers/secret_token.rb\
+      create  config/initializers/session_store.rb\
+      create  config/initializers/wrap_parameters.rb\
+      create  config/locales\
+      create  config/locales/en.yml\
+      create  config/boot.rb\
+      create  db\
+      create  db/seeds.rb\
+      create  doc\
+      create  doc/README_FOR_APP\
+      create  lib\
+      create  lib/tasks\
+      create  lib/tasks/.gitkeep\
+      create  lib/assets\
+      create  lib/assets/.gitkeep\
+      create  log\
+      create  log/.gitkeep\
+      create  public\
+      create  public/404.html\
+      create  public/422.html\
+      create  public/500.html\
+      create  public/favicon.ico\
+      create  public/index.html\
+      create  public/robots.txt\
+      create  script\
+      create  script/rails\
+      create  tmp/cache\
+      create  tmp/cache/assets\
+      create  vendor/assets/javascripts\
+      create  vendor/assets/javascripts/.gitkeep\
+      create  vendor/assets/stylesheets\
+      create  vendor/assets/stylesheets/.gitkeep\
+      create  vendor/plugins\
+      create  vendor/plugins/.gitkeep\
+       apply  https://github.com/RailsApps/rails3-application-templates/raw/master/rails3-mongoid-devise-template.rb\
+ initializer    generators.rb\
+      wizard  You are using Rails version 3.2.6.\
+      wizard  Checking configuration. Please confirm your preferences.\
+      insert    config/application.rb\
+      recipe  Running HAML recipe...\
+        haml  Would you like to use Haml instead of ERB? (y/n) y\
+     gemfile    haml (>= 3.1.6)\
+     gemfile    haml-rails (>= 0.3.4)\
+      recipe  Running RSpec recipe...\
+       rspec  Would you like to use RSpec instead of TestUnit? (y/n) y\
+    question  Which library would you like to use for test fixtures with RSpec?\
+          1)  None\
+          2)  factory_girl\
+          3)  machinist\
+       rspec  Enter your selection: 2\
+     gemfile    rspec-rails (>= 2.11.0)\
+     gemfile    database_cleaner (>= 0.8.0)\
+     gemfile    mongoid-rspec (1.4.6)\
+     gemfile    factory_girl_rails (>= 3.5.0)\
+     gemfile    email_spec (>= 1.2.1)\
+      create    features/support/email_spec.rb\
+      recipe  Running Cucumber recipe...\
+    cucumber  Would you like to use Cucumber for your BDD? (y/n) n\
+      recipe  Running guard recipe...\
+    question  Would you like to use Guard to automate your workflow?\
+          1)  No\
+          2)  Guard default configuration\
+          3)  Guard with LiveReload\
+       guard  Enter your selection: 1\
+       guard  Guard recipe skipped.\
+      recipe  Running Mongoid recipe...\
+     mongoid  Would you like to use Mongoid to connect to a MongoDB database? (y/n) y\
+     mongoid  REMINDER: When creating a Rails app using Mongoid...\
+     mongoid  you should add the '-O' flag to 'rails new'\
+     gemfile    mongoid (>= 3.0.1)\
+      recipe  Running ActionMailer recipe...\
+    question  How will you send email?\
+          1)  SMTP account\
+          2)  Gmail account\
+          3)  SendGrid account\
+          4)  Mandrill by MailChimp account\
+  action_mailer  Enter your selection: 2\
+      recipe  Running Devise recipe...\
+    question  Would you like to use Devise for authentication?\
+          1)  No\
+          2)  Devise with default modules\
+          3)  Devise with Confirmable module\
+          4)  Devise with Confirmable and Invitable modules\
+      devise  Enter your selection: 2\
+      devise  Would you like to manage authorization with CanCan & Rolify? (y/n) y\
+     gemfile    devise (>= 2.1.2)\
+     gemfile    cancan (>= 1.6.8)\
+     gemfile    rolify (>= 3.1.0)\
+      recipe  Running AddUser recipe...\
+      recipe  Running HomePage recipe...\
+      recipe  Running HomePageUsers recipe...\
+      recipe  Running SeedDatabase recipe...\
+      recipe  Running UsersPage recipe...\
+      recipe  Running html5 recipe...\
+    question  Which front-end framework would you like for HTML5 and CSS?\
+          1)  None\
+          2)  Zurb Foundation\
+          3)  Twitter Bootstrap (less)\
+          4)  Twitter Bootstrap (sass)\
+          5)  Skeleton\
+          6)  Just normalize CSS for consistent styling\
+       html5  Enter your selection: 4\
+     gemfile    bootstrap-sass (>= 2.0.4.0)\
+      recipe  Running SimpleForm recipe...\
+    question  Which form gem would you like?\
+          1)  None\
+          2)  simple form\
+          3)  simple form (bootstrap)\
+  simple_form  Enter your selection: 3\
+     gemfile    simple_form\
+      recipe  Running Cleanup recipe...\
+      recipe  Running Extras recipe...\
+      extras  Would you like to use 'rails-footnotes' (it's SLOW!)? (y/n) n\
+      extras  Would you like to set a robots.txt file to ban spiders? (y/n) y\
+      extras  Would you like to add 'will_paginate' for pagination? (y/n) n\
+      extras  Add 'therubyracer' JavaScript runtime (for Linux users without node.js)? (y/n) n\
+      extras  Banning spiders by modifying 'public/robots.txt'\
+      recipe  Running Git recipe...\
+      wizard  Running 'bundle install'. This will take a while.\
+         run    bundle install from "."\
+Fetching gem metadata from https://rubygems.org/........\
+Fetching gem metadata from https://rubygems.org/..\
+Using rake (0.9.2.2) \
+Using i18n (0.6.0) \
+Using multi_json (1.3.6) \
+Using activesupport (3.2.6) \
+Using builder (3.0.0) \
+Using activemodel (3.2.6) \
+Using erubis (2.7.0) \
+Using journey (1.0.4) \
+Using rack (1.4.1) \
+Using rack-cache (1.2) \
+Using rack-test (0.6.1) \
+Using hike (1.2.1) \
+Using tilt (1.3.3) \
+Using sprockets (2.1.3) \
+Using actionpack (3.2.6) \
+Using mime-types (1.19) \
+Using polyglot (0.3.3) \
+Using treetop (1.4.10) \
+Using mail (2.4.4) \
+Using actionmailer (3.2.6) \
+Using arel (3.0.2) \
+Using tzinfo (0.3.33) \
+Using activerecord (3.2.6) \
+Using activeresource (3.2.6) \
+Using bcrypt-ruby (3.0.1) \
+Using bootstrap-sass (2.0.4.0) \
+Using bundler (1.1.3) \
+Using cancan (1.6.8) \
+Using coffee-script-source (1.3.3) \
+Using execjs (1.4.0) \
+Using coffee-script (2.2.0) \
+Using rack-ssl (1.3.2) \
+Using json (1.7.3) \
+Using rdoc (3.12) \
+Using thor (0.15.4) \
+Using railties (3.2.6) \
+Using coffee-rails (3.2.2) \
+Using database_cleaner (0.8.0) \
+Using orm_adapter (0.4.0) \
+Using warden (1.2.1) \
+Using devise (2.1.2) \
+Using diff-lcs (1.1.3) \
+Using rspec-core (2.11.1) \
+Using rspec-expectations (2.11.1) \
+Using rspec-mocks (2.11.1) \
+Using rspec (2.11.0) \
+Using email_spec (1.2.1) \
+Using factory_girl (3.5.0) \
+Using factory_girl_rails (3.5.0) \
+Using haml (3.1.6) \
+Using haml-rails (0.3.4) \
+Using jquery-rails (2.0.2) \
+Using moped (1.1.2) \
+Using origin (1.0.4) \
+Using mongoid (3.0.1) \
+Using mongoid-rspec (1.4.6) \
+Using rails (3.2.6) \
+Using rolify (3.1.0) \
+Using rspec-rails (2.11.0) \
+Using sass (3.1.20) \
+Using sass-rails (3.2.5) \
+Using simple_form (2.0.2) \
+Using uglifier (1.2.6) \
+Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed.\
+         run    bundle update from "."\
+Fetching gem metadata from https://rubygems.org/........\
+Fetching gem metadata from https://rubygems.org/..\
+Using rake (0.9.2.2) \
+Using i18n (0.6.0) \
+Using multi_json (1.3.6) \
+Using activesupport (3.2.6) \
+Using builder (3.0.0) \
+Using activemodel (3.2.6) \
+Using erubis (2.7.0) \
+Using journey (1.0.4) \
+Using rack (1.4.1) \
+Using rack-cache (1.2) \
+Using rack-test (0.6.1) \
+Using hike (1.2.1) \
+Using tilt (1.3.3) \
+Using sprockets (2.1.3) \
+Using actionpack (3.2.6) \
+Using mime-types (1.19) \
+Using polyglot (0.3.3) \
+Using treetop (1.4.10) \
+Using mail (2.4.4) \
+Using actionmailer (3.2.6) \
+Using arel (3.0.2) \
+Using tzinfo (0.3.33) \
+Using activerecord (3.2.6) \
+Using activeresource (3.2.6) \
+Using bcrypt-ruby (3.0.1) \
+Using bootstrap-sass (2.0.4.0) \
+Using bundler (1.1.3) \
+Using cancan (1.6.8) \
+Using coffee-script-source (1.3.3) \
+Using execjs (1.4.0) \
+Using coffee-script (2.2.0) \
+Using rack-ssl (1.3.2) \
+Using json (1.7.3) \
+Using rdoc (3.12) \
+Using thor (0.15.4) \
+Using railties (3.2.6) \
+Using coffee-rails (3.2.2) \
+Using database_cleaner (0.8.0) \
+Using orm_adapter (0.4.0) \
+Using warden (1.2.1) \
+Using devise (2.1.2) \
+Using diff-lcs (1.1.3) \
+Using rspec-core (2.11.1) \
+Using rspec-expectations (2.11.1) \
+Using rspec-mocks (2.11.1) \
+Using rspec (2.11.0) \
+Using email_spec (1.2.1) \
+Using factory_girl (3.5.0) \
+Using factory_girl_rails (3.5.0) \
+Using haml (3.1.6) \
+Using haml-rails (0.3.4) \
+Using jquery-rails (2.0.2) \
+Using moped (1.1.2) \
+Using origin (1.0.4) \
+Using mongoid (3.0.1) \
+Using mongoid-rspec (1.4.6) \
+Using rails (3.2.6) \
+Using rolify (3.1.0) \
+Using rspec-rails (2.11.0) \
+Using sass (3.1.20) \
+Using sass-rails (3.2.5) \
+Using simple_form (2.0.2) \
+Using uglifier (1.2.6) \
+Your bundle is updated! Use `bundle show [gemname]` to see where a bundled gem is installed.\
+      wizard  Running 'after bundler' callbacks.\
+       rspec  RSpec recipe running 'after bundler'\
+    generate    rspec:install\
+\
+Mongoid config not found. Create a config file at: config/mongoid.yml\
+to generate one run: rails generate mongoid:config\
+\
+      create  .rspec\
+      create  spec\
+      create  spec/spec_helper.rb\
+    generate    email_spec:steps\
+\
+Mongoid config not found. Create a config file at: config/mongoid.yml\
+to generate one run: rails generate mongoid:config\
+\
+      create  features/step_definitions/email_steps.rb\
+      insert    spec/spec_helper.rb\
+      insert    spec/spec_helper.rb\
+       rspec  Removing test folder (not needed for RSpec)\
+         run    rm -rf test/ from "."\
+      insert    config/application.rb\
+        gsub    spec/spec_helper.rb\
+        gsub    spec/spec_helper.rb\
+      insert    spec/spec_helper.rb\
+        gsub    config/application.rb\
+        gsub    config/application.rb\
+      create    spec/support/mongoid.rb\
+      create    spec/support/devise.rb\
+     mongoid  Mongoid recipe running 'after bundler'\
+    generate    mongoid:config\
+\
+Mongoid config not found. Create a config file at: config/mongoid.yml\
+to generate one run: rails generate mongoid:config\
+\
+      create  config/mongoid.yml\
+      remove    config/database.yml\
+  action_mailer  ActionMailer recipe running 'after bundler'\
+        gsub    config/environments/development.rb\
+        gsub    config/environments/development.rb\
+      insert    config/environments/test.rb\
+        gsub    config/environments/production.rb\
+  action_mailer  \
+\
+  config.action_mailer.smtp_settings = \{\
+    address: "smtp.gmail.com",\
+    port: 587,\
+    domain: "example.com",\
+    authentication: "plain",\
+    enable_starttls_auto: true,\
+    user_name: ENV["GMAIL_USERNAME"],\
+    password: ENV["GMAIL_PASSWORD"]\
+  \}\
+      insert    config/environments/development.rb\
+      insert    config/environments/production.rb\
+      devise  Devise recipe running 'after bundler'\
+    generate    devise:install\
+      create  config/initializers/devise.rb\
+      create  config/locales/devise.en.yml\
+===============================================================================\
+\
+Some setup you must do manually if you haven't yet:\
+\
+  1. Ensure you have defined default url options in your environments files. Here \
+     is an example of default_url_options appropriate for a development environment \
+     in config/environments/development.rb:\
+\
+       config.action_mailer.default_url_options = \{ :host => 'localhost:3000' \}\
+\
+     In production, :host should be set to the actual host of your application.\
+\
+  2. Ensure you have defined root_url to *something* in your config/routes.rb.\
+     For example:\
+\
+       root :to => "home#index"\
+\
+  3. Ensure you have flash messages in app/views/layouts/application.html.erb.\
+     For example:\
+\
+       <p class="notice"><%= notice %></p>\
+       <p class="alert"><%= alert %></p>\
+\
+  4. If you are deploying Rails 3.1 on Heroku, you may want to set:\
+\
+       config.assets.initialize_on_precompile = false\
+\
+     On config/application.rb forcing your application to not access the DB\
+     or load models when precompiling your assets.\
+\
+===============================================================================\
+        gsub    config/application.rb\
+      insert    app/controllers/application_controller.rb\
+    add_user  AddUser recipe running 'after bundler'\
+    generate    devise user\
+      invoke  mongoid\
+      create    app/models/user.rb\
+      invoke    rspec\
+      create      spec/models/user_spec.rb\
+      invoke      factory_girl\
+      create        spec/factories/users.rb\
+      insert    app/models/user.rb\
+      insert    app/models/user.rb\
+       route  devise_for :users\
+    generate    cancan:ability\
+      create  app/models/ability.rb\
+    generate    rolify:role Role User mongoid\
+      create  app/models/role.rb\
+      insert  app/models/user.rb\
+      create  config/initializers/rolify.rb\
+===============================================================================\
+\
+An initializer file has been created here: config/initializers/rolify.rb, you \
+can change rolify settings to match your needs. \
+Defaults values are commented out.\
+\
+A Role class has been been created in app/models (with the name you gave as \
+argument otherwise the default is role.rb), you can add your own business logic \
+inside.\
+\
+Inside your User class (or the name you gave as argument otherwise the default \
+is user.rb), rolify method has been inserted to provide rolify methods.\
+\
+Now, if you are able to add the resourcify method inside all models you want \
+scoped by a role.\
+\
+===============================================================================        gsub    app/models/user.rb\
+        gsub    app/models/user.rb\
+        gsub    app/models/user.rb\
+      create    app/views/devise/shared/_links.html.haml\
+      create    app/views/devise/registrations/edit.html.haml\
+      create    app/views/devise/registrations/new.html.haml\
+   home_page  HomePage recipe running 'after bundler'\
+      remove    public/index.html\
+    generate    controller\
+      create  app/controllers/home_controller.rb\
+       route  get "home/index"\
+      invoke  haml\
+      create    app/views/home\
+      create    app/views/home/index.html.haml\
+      invoke  rspec\
+      create    spec/controllers/home_controller_spec.rb\
+      invoke  helper\
+      create    app/helpers/home_helper.rb\
+      invoke    rspec\
+      invoke  assets\
+      invoke    coffee\
+      create      app/assets/javascripts/home.js.coffee\
+      invoke    scss\
+      create      app/assets/stylesheets/home.css.scss\
+      remove    app/views/home/index.html.haml\
+      create    app/views/home/index.html.haml\
+        gsub    config/routes.rb\
+      insert    config/routes.rb\
+  home_page_users  HomePageUsers recipe running 'after bundler'\
+        gsub    app/controllers/home_controller.rb\
+      remove    app/views/home/index.html.haml\
+      create    app/views/home/index.html.haml\
+  seed_database  SeedDatabase recipe running 'after bundler'\
+      append    db/seeds.rb\
+      append    db/seeds.rb\
+  users_page  UsersPage recipe running 'after bundler'\
+    generate    controller\
+      create  app/controllers/users_controller.rb\
+       route  get "users/index"\
+       route  get "users/show"\
+      invoke  haml\
+      create    app/views/users\
+      create    app/views/users/show.html.haml\
+      create    app/views/users/index.html.haml\
+      invoke  rspec\
+      create    spec/controllers/users_controller_spec.rb\
+      invoke  helper\
+      create    app/helpers/users_helper.rb\
+      invoke    rspec\
+      invoke  assets\
+      invoke    coffee\
+      create      app/assets/javascripts/users.js.coffee\
+      invoke    scss\
+      create      app/assets/stylesheets/users.css.scss\
+      remove    app/controllers/users_controller.rb\
+      create    app/controllers/users_controller.rb\
+      insert    app/controllers/users_controller.rb\
+      insert    app/models/ability.rb\
+        gsub    config/routes.rb\
+        gsub    config/routes.rb\
+        gsub    config/routes.rb\
+      remove    app/views/users/index.html.haml\
+      create    app/views/users/index.html.haml\
+      remove    app/views/users/show.html.haml\
+      create    app/views/users/show.html.haml\
+      remove    app/controllers/home_controller.rb\
+      create    app/controllers/home_controller.rb\
+      remove    app/views/home/index.html.haml\
+      create    app/views/home/index.html.haml\
+       html5  HTML5 recipe running 'after bundler'\
+      create    public/humans.txt\
+      remove    app/assets/stylesheets/application.css\
+      remove    app/views/layouts/application.html.erb\
+      remove    app/views/layouts/application.html.haml\
+      create    app/views/layouts/application.html.haml\
+      create    app/views/layouts/_messages.html.haml\
+      create    app/assets/stylesheets/application.css.scss\
+      create    app/views/layouts/_navigation.html.haml\
+        gsub    app/views/layouts/application.html.haml\
+        gsub    app/views/layouts/_navigation.html.haml\
+       html5  installing Twitter Bootstrap HTML5 framework (sass)\
+      insert    app/assets/javascripts/application.js\
+      create    app/assets/stylesheets/bootstrap_and_overrides.css.scss\
+  simple_form  Simple form recipe running 'after bundler'\
+    generate    simple_form:install --bootstrap\
+       exist  config\
+      create  config/initializers/simple_form.rb\
+      create  config/locales/simple_form.en.yml\
+      create  lib/templates/haml/scaffold/_form.html.haml\
+===============================================================================\
+\
+  Be sure to have a copy of the Bootstrap stylesheet available on your\
+  application, you can get it on http://twitter.github.com/bootstrap.\
+\
+  Inside your views, use the 'simple_form_for' with one of the Bootstrap form\
+  classes, '.form-horizontal', '.form-inline', '.form-search' or\
+  '.form-vertical', as the following:\
+\
+    = simple_form_for(@user, :html => \{:class => 'form-horizontal' \}) do |form|\
+\
+===============================================================================\
+     cleanup  Cleanup recipe running 'after bundler'\
+      remove    README\
+      remove    doc/README_FOR_APP\
+      remove    public/index.html\
+      remove    app/assets/images/rails.png\
+      create    README\
+      create    README.textile\
+        gsub    README\
+        gsub    README.textile\
+        gsub    Gemfile\
+        gsub    Gemfile\
+        gsub    config/routes.rb\
+        gsub    config/routes.rb\
+        gsub    public/robots.txt\
+        gsub    public/robots.txt\
+      wizard  Running 'after everything' callbacks.\
+      devise  Devise recipe running 'after everything'\
+      devise  Copying RSpec files from the rails3-devise-rspec-cucumber examples\
+      remove    spec/factories/users.rb\
+      create    spec/factories/users.rb\
+      remove    spec/controllers/home_controller_spec.rb\
+      remove    spec/controllers/users_controller_spec.rb\
+      create    spec/controllers/home_controller_spec.rb\
+      create    spec/controllers/users_controller_spec.rb\
+      remove    spec/models/user_spec.rb\
+      create    spec/models/user_spec.rb\
+      remove    spec/views/home/index.html.erb_spec.rb\
+      remove    spec/views/home/index.html.haml_spec.rb\
+      remove    spec/views/users/show.html.erb_spec.rb\
+      remove    spec/views/users/show.html.haml_spec.rb\
+      remove    spec/helpers/home_helper_spec.rb\
+      remove    spec/helpers/users_helper_spec.rb\
+  seed_database  creating indexes and seeding the database\
+         run    rake db:mongoid:create_indexes from "."\
+rake aborted!\
+\
+Problem:\
+  Invalid index specification on Role: name, \{:unique=>true\}\
+Summary:\
+  Indexes in Mongoid are defined as a hash of field name and direction/2d pairs, with a hash for any additional options.\
+Resolution:\
+  Ensure that the index conforms to the correct syntax and has the correct options.\
+\
+ Valid options are:\
+ \'a0\'a0background: true|false\
+ \'a0\'a0drop_dups: true|false\
+ \'a0\'a0name: 'index_name'\
+ \'a0\'a0sparse: true|false\
+ \'a0\'a0unique: true|false\
+\
+ Valid types are: 1, -1, '2d'\
+\
+ Example:\
+ \'a0\'a0class Band\
+ \'a0\'a0\'a0\'a0include Mongoid::Document\
+ \'a0\'a0\'a0\'a0index(\{ name: 1, label: -1 \}, \{ sparse: true \})\
+ \'a0\'a0\'a0\'a0index(\{ location: '2d' \}, \{ background: true \})\
+ \'a0\'a0end\
+\
+\
+Tasks: TOP => db:mongoid:create_indexes => environment\
+(See full trace by running task with --trace)\
+         run    bundle exec rake db:seed from "."\
+rake aborted!\
+\
+Problem:\
+  Invalid index specification on Role: name, \{:unique=>true\}\
+Summary:\
+  Indexes in Mongoid are defined as a hash of field name and direction/2d pairs, with a hash for any additional options.\
+Resolution:\
+  Ensure that the index conforms to the correct syntax and has the correct options.\
+\
+ Valid options are:\
+ \'a0\'a0background: true|false\
+ \'a0\'a0drop_dups: true|false\
+ \'a0\'a0name: 'index_name'\
+ \'a0\'a0sparse: true|false\
+ \'a0\'a0unique: true|false\
+\
+ Valid types are: 1, -1, '2d'\
+\
+ Example:\
+ \'a0\'a0class Band\
+ \'a0\'a0\'a0\'a0include Mongoid::Document\
+ \'a0\'a0\'a0\'a0index(\{ name: 1, label: -1 \}, \{ sparse: true \})\
+ \'a0\'a0\'a0\'a0index(\{ location: '2d' \}, \{ background: true \})\
+ \'a0\'a0end\
+\
+\
+Tasks: TOP => db:seed => environment\
+(See full trace by running task with --trace)\
+         git  Git recipe running 'after everything'\
+      remove    .gitignore\
+      create    .gitignore\
+         run    git init from "."\
+Initialized empty Git repository in /Users/michael/Dropbox/rails_proj/speculator/.git/\
+         run    git add . from "."\
+         run    git commit -aqm 'new Rails app generated by Rails Apps Composer gem' from "."\
+         run    git checkout  -b working_branch from "."\
+Switched to a new branch 'working_branch'\
+         run    git add . from "."\
+         run    git commit -m 'Initial commit of working_branch' from "."\
+# On branch working_branch\
+nothing to commit (working directory clean)\
+         run    git checkout master from "."\
+Switched to branch 'master'\
+      wizard  Finished running the rails_apps_composer app template.\
+      wizard  Your new Rails app is ready.\
+         run  bundle install\
+Using rake (0.9.2.2) \
+Using i18n (0.6.0) \
+Using multi_json (1.3.6) \
+Using activesupport (3.2.6) \
+Using builder (3.0.0) \
+Using activemodel (3.2.6) \
+Using erubis (2.7.0) \
+Using journey (1.0.4) \
+Using rack (1.4.1) \
+Using rack-cache (1.2) \
+Using rack-test (0.6.1) \
+Using hike (1.2.1) \
+Using tilt (1.3.3) \
+Using sprockets (2.1.3) \
+Using actionpack (3.2.6) \
+Using mime-types (1.19) \
+Using polyglot (0.3.3) \
+Using treetop (1.4.10) \
+Using mail (2.4.4) \
+Using actionmailer (3.2.6) \
+Using arel (3.0.2) \
+Using tzinfo (0.3.33) \
+Using activerecord (3.2.6) \
+Using activeresource (3.2.6) \
+Using bcrypt-ruby (3.0.1) \
+Using bootstrap-sass (2.0.4.0) \
+Using cancan (1.6.8) \
+Using coffee-script-source (1.3.3) \
+Using execjs (1.4.0) \
+Using coffee-script (2.2.0) \
+Using rack-ssl (1.3.2) \
+Using json (1.7.3) \
+Using rdoc (3.12) \
+Using thor (0.15.4) \
+Using railties (3.2.6) \
+Using coffee-rails (3.2.2) \
+Using database_cleaner (0.8.0) \
+Using orm_adapter (0.4.0) \
+Using warden (1.2.1) \
+Using devise (2.1.2) \
+Using diff-lcs (1.1.3) \
+Using rspec-core (2.11.1) \
+Using rspec-expectations (2.11.1) \
+Using rspec-mocks (2.11.1) \
+Using rspec (2.11.0) \
+Using email_spec (1.2.1) \
+Using factory_girl (3.5.0) \
+Using factory_girl_rails (3.5.0) \
+Using haml (3.1.6) \
+Using haml-rails (0.3.4) \
+Using jquery-rails (2.0.2) \
+Using moped (1.1.2) \
+Using origin (1.0.4) \
+Using mongoid (3.0.1) \
+Using mongoid-rspec (1.4.6) \
+Using bundler (1.1.3) \
+Using rails (3.2.6) \
+Using rolify (3.1.0) \
+Using rspec-rails (2.11.0) \
+Using sass (3.1.20) \
+Using sass-rails (3.2.5) \
+Using simple_form (2.0.2) \
+Using uglifier (1.2.6) \
+Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed.\
+{\*\beandata789c9d935d6f82301486aff157748db752d876b12d8851c1c4cc2099b86497153a65e32ba5cef1ef57444aeb66b68c1bda73fabe4f7b4e6b8d3ed3047c105ac6793684a66e4040b2308fe26c3b84eb6036b88323bb675d39cb69f0e2bba048e292017f3d59cca7000e101a17454210720207f88bf92a00dc0321d78300ee182b1e103a1c0e3aae57e9619ed60b4be4d3bc2094550b6e36e0023d6211e498c65dd90e8f4671c8ec9e66bd93caee631aee62bec242f594474b46f9666d6ff5482a128d45fa146f75f9e68d84ac14324c29ae07c2a09fed934492692d573b3984092e855e4e37f9e9acbf9e3b5d5eb3e28c912da1f6ad85dae1518854636fa5f39fec2cf6a6502e603aceb5ca5140a8f36ca16715f93ff7e64fdc2eda567ce28ebd27f6ead6f78d778ef1e866cf48f9dcf4dfdba71ba591d2490dd334ee0df5c03ff68b5c3a9fb8360e57711aa6958c92572c8f8552b2dfead9d0329c1289f70b4354a4736bbc585e887b2a8a56cf2704670e665830cece7cde24513053ad540756ded6e9e109b6501bf52759b43a0b1d5facddfb02aa1d4161}}

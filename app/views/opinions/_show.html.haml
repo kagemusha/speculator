@@ -1,0 +1,15 @@
+- opinion ||= Opinion.new
+- stock_id = opinion.stock ? opinion.stock.id : ""
+- fields = [:killer, :sales_comments, :pl_comments, :bs_comments, :cf_comments, :credit_rating, :general_comments]
+
+.show_opinion{:id=>stock_id}
+  - fields.each do |field|
+    %lbl #{field.to_s.capitalize}:
+    %br
+    = opinion[field]
+    %br
+  %lbl Action:
+  %span.action= opinion.action
+  %br
+  %br
+  = link_to "Update", "#", :class=>["editOpinion","btn"], :stock_id=>stock_id
