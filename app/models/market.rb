@@ -1,8 +1,15 @@
 class Market
 
+  def self.tz_nyc
+    ActiveSupport::TimeZone.new("Eastern Time (US & Canada)")
+  end
+
+  def self.time_now_nyc
+    Time.now.in_time_zone tz_nyc
+  end
+
   def self.last_open_time
-    zone = ActiveSupport::TimeZone.new("Eastern Time (US & Canada)")
-    nowET = Time.now.in_time_zone(zone)
+    nowET = time_now_nyc
     if nowET.sunday?
       return Time.now - nowET.hour.hours - nowET.min.minutes - 32.hours
     elsif nowET.saturday?
@@ -21,8 +28,7 @@ class Market
   end
 
   def self.open?
-    zone = ActiveSupport::TimeZone.new("Eastern Time (US & Canada)")
-    nowET = Time.now.in_time_zone(zone)
+    nowET = time_now_nyc
     return false if nowET.sunday? or nowET.saturday?
     return false if nowET.hour < 9 and nowET.hour > 16 or (nowET.hour==9 and nowET.min < 30)
     return false if (nowET.month==1 and nowET.day==1) or (nowET.month==7 and nowET.day==4)

@@ -2,7 +2,7 @@ class OpinionsController < ApplicationController
   # GET /opinions
   # GET /opinions.json
   def index
-    @opinions = Opinion.all
+    @opinions = Opinion.active
 
     respond_to do |format|
       format.html # index.html.erb
@@ -35,6 +35,10 @@ class OpinionsController < ApplicationController
   # GET /opinions/1/edit
   def edit
     @opinion = Opinion.find(params[:id])
+    render partial: "opinions/form", locals: {opinion: @opinion, price: nil, action: "update"}
+    #respond_to do |format|
+    #  format.json { }
+    #end
   end
 
   # POST /opinions
@@ -61,7 +65,7 @@ class OpinionsController < ApplicationController
     respond_to do |format|
       if @opinion.update_attributes(params[:opinion])
         format.html { redirect_to @opinion, notice: 'Opinion was successfully updated.' }
-        format.json { head :no_content }
+        format.json { render json: @opinion.to_json }
       else
         format.html { render action: "edit" }
         format.json { render json: @opinion.errors, status: :unprocessable_entity }

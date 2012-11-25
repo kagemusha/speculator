@@ -6,60 +6,84 @@
   #{symbol} not found
 - else
   - symbol = stock.symbol
+
+  .opinion_panel{:id=>stock.id}
+    - if opinion
+      = render :partial=>"opinions/show", :locals=>{:stock=>stock, :opinion=>opinion}
+    - else
+      = render :partial=>"opinions/form", :locals=>{:stock=>stock, :price=>cur_data["price"], :action=>"create"}
+
   .data_panel
     = link_to "Hide", stock_panel_id,:class=>["view_stock","hidePanel"], :symbol=>symbol
-    %span.low_dates
-      &nbsp;&nbsp;Lows:&nbsp;
+    .low_dates
+      %span.title Lows:&nbsp;
       - stock.new_lows.each do |low|
         /#{Time.now.year} #{low.date.year} #{Time.now.year==low.date.year}
         = low.date.year == Time.now.year ? low.date.strftime("%m-%d") : low.date.strftime("%Y-%m-%d")
+        %span.new_low_price (#{low.new_low_price})
         &nbsp;
     .stock_head
-      %span.symbol=link_to symbol, "http://quotes.wsj.com/#{symbol}",  :target=>"_blank"
+      -if stock.company_url
+        %span.symbol=link_to symbol, stock.company_url, :target=>"_blank"
+      - else
+        %span.symbol=symbol
       %span.co_info (#{stock.exch})
       %span.price #{cur_data["price"]}
-      %span.update #{link_to "Update Data", stock_panel_id, :class=>"update_stock", :symbol=>symbol}
+      %span.update #{link_to "Update", stock_panel_id, :class=>"update_stock", :symbol=>symbol}
       %span.update |&nbsp; #{link_to "Rescrape", stock_panel_id,:class=>"update_stock", :symbol=>symbol, :force=>true}
-      |&nbsp; #{link_to "YFinance", "http://finance.yahoo.com/q?s=#{symbol}",  :target=>"_blank"}
+      %span.update |&nbsp; #{link_to "Recalc", stock_panel_id,:class=>"update_stock", :symbol=>symbol, :recalc=>true}
+      |&nbsp; #{link_to "WSJ", "http://quotes.wsj.com/#{symbol}",  :target=>"_blank"}
+      |&nbsp; #{link_to "SkAlpa", "http://seekingalpha.com/symbol/#{symbol}",  :target=>"_blank"}
+      |&nbsp; #{link_to "YFin", "http://finance.yahoo.com/q?s=#{symbol}",  :target=>"_blank"}
       |&nbsp; #{link_to "Edgar", "http://www.sec.gov/cgi-bin/browse-edgar?company=&match=&CIK=#{symbol}&filenum=&State=&Country=&SIC=&owner=exclude&Find=Find+Companies&action=getcompany",  :target=>"_blank"}
 
 
     .company_desc
       %span.sector=stock.sector
       %span.industry (#{stock.industry})
+      - if stock.competitors
+        Comps:
+        - stock.competitors.each do |competitor|
+          #{link_to competitor, stock_url(competitor)}&nbsp;&nbsp;
       %br
       =link_to "+", stock_panel_id, class: "exp_stock_desc", symbol: stock.symbol
       =link_to "-", stock_panel_id, class: "collapse_stock_desc", symbol: stock.symbol
-      %span.desc{:desc=>stock.description}=stock.description[0..90] if stock.description
-    .stock_section
+      %span.desc{:id=>stock.symbol, :desc=>stock.description}=stock.description[0..90] if stock.description
+    .stock_stats
       - cur_items.each_pair do |lbl, val|
         %span.cur_item_lbl #{lbl}:
         %span.cur_item #{val}&nbsp;&nbsp;
+    - pct_ch_fields = [:sales, :tot_assets] #, :ebda  will look for a <field>_growth elem)
     - pl_attrs = [:sales, :net_inc, :ebda]
-    - cf_attrs = [:capex,:net_asset_inv, :divs_paid]
+    - cf_attrs1 = [:capex,:net_asset_inv]
+    - calc_attrs = [:m_cashflow]
+    - cf_attrs2 = [:divs_paid]
     - bs_attrs = [:tot_assets, :tot_cur_assets, :tot_liab, :net_eq]
-    .stock_section
-      Fiscal Year: #{stock.fiscal_year}
-      - inc="Inc"
-      - bs="Bal Sh"
-      - cf="Cash Fl"
-      = render :partial=>"stocks/fin_stmt", :locals=>{:title=>"#{inc}-A", :stmts=>stock.pl_annual,
-              :attrs=>pl_attrs}
-      = render :partial=>"stocks/fin_stmt", :locals=>{:title=>"#{cf}-A", :stmts=>stock.cf_annual,
-              :attrs=>cf_attrs}
-      = render :partial=>"stocks/fin_stmt", :locals=>{:title=>"#{bs}-A", :stmts=>stock.bs_annual,
-              :attrs=>bs_attrs}
-      = render :partial=>"stocks/fin_stmt", :locals=>{:title=>"#{inc}-Q", :stmts=>stock.pl_qtr,
-              :attrs=>pl_attrs}
-      = render :partial=>"stocks/fin_stmt", :locals=>{:title=>"#{cf}-Q", :stmts=>stock.cf_qtr,
-              :attrs=>cf_attrs}
-      = render :partial=>"stocks/fin_stmt", :locals=>{:title=>"#{bs}-Q", :stmts=>stock.bs_qtr,
-              :attrs=>bs_attrs}
-
-  .opinion_panel{:id=>stock.id}
-    - if opinion
-      = render :partial=>"opinions/show", :locals=>{:stock=>stock, :opinion=>opinion}
-    - else
-      = render :partial=>"opinions/form", :locals=>{:stock=>stock}
-
-/= js "initStockPanel"
+    .scrollwrap
+      .stock_section{:symbol=>stock.symbol}
+        - inc="Inc"
+        - bs="Bal Sh"
+        - cf="CFlow"
+        - q_fmt = "todo" #stock.num_format(q)
+        - a_fmt = "todo" #stock.num_format(a)
+        = render :partial=>"stocks/fin_stmt", :locals=>{:title=>"#{inc}-A", :stmts=>stock.pl_annual,
+                :attrs=>pl_attrs, :growth_fields=>pct_ch_fields}
+        = render :partial=>"stocks/fin_stmt", :locals=>{:title=>nil, :stmts=>stock.cf_annual,
+                :attrs=>cf_attrs1, :growth_fields=>pct_ch_fields}
+        = render :partial=>"stocks/fin_stmt", :locals=>{:title=>nil, :stmts=>stock.calcs_annual,
+                :attrs=>calc_attrs, :growth_fields=>pct_ch_fields}
+        = render :partial=>"stocks/fin_stmt", :locals=>{:title=>nil, :stmts=>stock.cf_annual,
+                :attrs=>cf_attrs2, :growth_fields=>pct_ch_fields}
+        = render :partial=>"stocks/fin_stmt", :locals=>{:title=>"#{bs}-A", :stmts=>stock.bs_annual,
+                :attrs=>bs_attrs, :growth_fields=>pct_ch_fields}
+        = render :partial=>"stocks/fin_stmt", :locals=>{:title=>"#{inc}-Q", :stmts=>stock.pl_qtr,
+                :attrs=>pl_attrs, :growth_fields=>pct_ch_fields}
+        = render :partial=>"stocks/fin_stmt", :locals=>{:title=>nil, :stmts=>stock.cf_qtr,
+                :attrs=>cf_attrs1, :growth_fields=>pct_ch_fields}
+        = render :partial=>"stocks/fin_stmt", :locals=>{:title=>nil, :stmts=>stock.calcs_qtr,
+                :attrs=>calc_attrs, :growth_fields=>pct_ch_fields}
+        = render :partial=>"stocks/fin_stmt", :locals=>{:title=>nil, :stmts=>stock.cf_qtr,
+                :attrs=>cf_attrs2, :growth_fields=>pct_ch_fields}
+        = render :partial=>"stocks/fin_stmt", :locals=>{:title=>"#{bs}-Q", :stmts=>stock.bs_qtr,
+                :attrs=>bs_attrs, :growth_fields=>pct_ch_fields}
+    %input{:type=>'range', :min=>0, :max=>"2600", :value=>"1300", :step=>"10"}

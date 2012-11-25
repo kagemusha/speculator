@@ -1,6 +1,7 @@
 class FinancialStatement
   include Mongoid::Document
   embedded_in :stock
+  #ALL FINANCIAL STATEMENT ITEMS ARE IN MILLIONS
   field :period_type, type: String #quarter or annual
   field :period_end, type: Date
   field :units, type: String
@@ -9,19 +10,22 @@ class FinancialStatement
   field :scraped_data, type: Hash
   before_save :recalc
 
+  default_scope order_by(:period_end => :desc)
+
   BIL = "B"
   MIL = "M"
   THOU = "T"
 
   A = "a" #annual
   Q = "q" #quarterly
+  PERIOD_TYPES = [A, Q]
 
   def label(attr)
     attr.to_s.gsub("_"," ").capitalize
   end
 
   def formatted_period
-    annual? ? period_end.year : period_end.to_s("%Y-%m-%d")
+    annual? ? period_end.year : period_end.to_s("%Y-%m")
   end
 
   def annual?
@@ -36,4 +40,5 @@ class FinancialStatement
   def recalc()
     #overwrite in subclass
   end
+
 end

@@ -1,50 +1,8 @@
 %h3 Spectaculador
 
 NYSE last open: #{Market.last_open_time.strftime("%a %b %d %H:%M")}
-%br
-%table
-  %tr
-    %th
-    %th Last
-    %th Date
-    %th YTD Change
-  %tr
-    %td S&P
-    %td
-    %td
-  %tr
-    %td MS Asia
-    %td
-    %td
-  %tr
-    %td MS Eur
-    %td
-    %td
-  %tr
-    %td Euro
-    %td
-    %td
-  %tr
-    %td Yen
-    %td
-    %td
-  %tr
-    %td Oil
-    %td
-    %td
-  %tr
-    %td Gold
-    %td
-    %td
-  %tr
-    %td Nat Gas
-    %td
-    %td
-  %tr
-    %td Coal
-    %td
-    %td
-  %tr
-    %td
-    %td
-    %td
+#last_update
+  Getting data...
+
+#data_panel
+= js "initHomePg"

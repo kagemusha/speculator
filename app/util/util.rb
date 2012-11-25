@@ -6,6 +6,12 @@ class Util
     Rails.logger.debug msgStr
   end
 
+  def self.convert_float(str)
+    return nil if !str or str.class != String
+    str.to_f_f
+  end
+
+
   def self.is_number?(i)
     true if Float(i) rescue false
   end

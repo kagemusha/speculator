@@ -1,0 +1,15 @@
+%table.mkt_data{id: list[:table_id]}
+  %tr.head
+    %th.item=link_to list[:title], list[:link]
+    - list[:headers].each do |h|
+      %th.val=h
+  - list[:fields].each_pair do |item,data_key|
+    %tr
+      %td.item=item
+      - vals =  list[:calcs] ? eval("#{list[:calcs]}(#{data[data_key].to_s})") : data[data_key]
+      - vals.each do |field|
+        - klasses = ["val"]
+        - klasses << "pos" if field.to_s.start_with?("+")
+        - klasses << "neg" if field.to_s.start_with?("-")
+        %td{:class=>klasses}=number_with_precision(field, :precision => 2)
+%br

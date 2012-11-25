@@ -1,16 +1,28 @@
 - if stmts.length > 0
+  - red_green_attrs = [:m_cashflow, :net_eq]
   - st = stmts[0]
   - cur = st.currency
   - units = st.units
   %table.fin_stmt
-    %tr
-      %th.type
-        %strong #{title}
-        %span.units #{cur}#{units ? "-#{units[0]}" : ""}
-      - stmts.each do |st|
-        %th.val=st.formatted_period
+    - if title
+      %tr
+        %th.type
+          %strong #{title}
+          %span.units #{cur}#{units ? "-#{units[0]}" : ""}
+        - stmts.each do |st|
+          %th.val.date=st.period_end.strftime("%Y-%m")
+          %th.pct="%ch"
     - attrs.each do |attr|
       %tr
-        %td=stmts[0].label(attr)
+        %td.lbl=stmts[0].label(attr)
+        - pct_class = ["pct"]
         - stmts.each do |st|
-          %td.val=number_with_precision(st[attr], :delimiter=>",", :precision=>0)
+          - klasses = ["val"]
+          - klasses << (!st[attr].blank? and st[attr] < 0 ? "neg_val" : "pos_val") if red_green_attrs.include?(attr)
+          %td{:class=>klasses.join(" ")}=number_with_precision(st[attr], :delimiter=>",", :precision=>0)
+          - growth_text=""
+          - if growth_fields.include? attr
+            - gr_attr = st["#{attr}_growth"]
+            - growth_pct = number_with_precision(gr_attr, :delimiter=>",", :precision=>0)
+            - growth_text="#{growth_pct}%"
+          %td{:class=>pct_class}=growth_text

@@ -1,8 +1,11 @@
 // Place all the styles related to the stocks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.stock_stats
+  border-top: solid 1px #538312
 .stock_section
   border-top: solid 1px #538312
+  max-width: 900px
 .stock_head
   border: none
   font-size: 14px
@@ -54,7 +57,7 @@ table.fin_stmt
   float: left
   border-top: 1px solid #333
   padding: 4px 0
-  min-width: 950px
+  min-width: 1500px
 .stock_headline
   float: left
   a:visited
@@ -64,9 +67,16 @@ table.fin_stmt
     color: purple
 .stock_panel
   float: left
+  min-width: 1250px
+  background: #add8e6
+//.opinion_panel  #see opinions.css.sass
 .data_panel
   float: left
-  margin-right: 30px
+  //background:  #7fffd4
+  min-width: 800px
+  .company_desc
+    max-width: 750px
+  //margin-right: 30px
 
 
 table.fin_stmt
@@ -77,7 +87,24 @@ table.fin_stmt
       font-weight: normal
   th
     font-size: 10px
-
+  td,th
+    //color: white
+    background: #f08080
+    font-size: 12px
+    //min-width: 100px
+    &.lbl
+      min-width: 110px
+      background: #778899
+    &.val
+      min-width: 90px
+      background: #add8e6
+      text-align: right
+    &.pct
+      min-width: 35px
+      max-width: 35px
+      background: #e6e6fa
+.new_low_price
+  color: black
 
 .show_opinion
   width: 260px
@@ -86,6 +113,16 @@ table.fin_stmt
   display: none
 
 .low_dates
+  max-width: 800px
   font-size: 11px
   font-weight: bold
   color: purple
+  span.title
+    color: black
+
+.neg_val
+  color: red
+  font-weight: bold
+.pos_val
+  color: #006400
+  font-weight: bold

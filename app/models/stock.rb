@@ -20,8 +20,11 @@ class Stock
   field :company_name, type: String
   field :industry, type: String
   field :description, type: String
+  field :company_url, type: String
   field :current_data_updated_at, type: DateTime
   field :bad_wsj_scrape, type: Boolean
+  field :sequential, type: Boolean
+  field :competitors, :type => Array
   validates_presence_of :symbol
   validates_uniqueness_of :symbol
 
@@ -36,6 +39,18 @@ class Stock
         current_data_updated_at > Market.last_open_time
   end
 
+  def fin_stmts(period_type=nil)
+    Array.new.concat(balance_sheets).concat(income_statements).concat(cashflow_statements)
+  end
+
+  def clear_fin_stmts(period_type=nil)
+    conditions = period_type ? {period_type: period_type} : nil
+
+    balance_sheets.destroy_all conditions
+    income_statements.destroy_all conditions
+    cashflow_statements.destroy_all conditions
+    fin_calcs.destroy_all conditions
+  end
 
   def latest_q_date
     latest_q = balance_sheets.where(:period_type=>FinancialStatement::Q).desc(:period_end).first
@@ -74,6 +89,9 @@ class Stock
   def pl_annual
     income_statements.where :period_type=>FinancialStatement::A
   end
+  def calcs_annual
+    fin_calcs.where :period_type=>FinancialStatement::A
+  end
   def pl_qtr
     income_statements.where :period_type=>FinancialStatement::Q
   end
@@ -82,6 +100,9 @@ class Stock
   end
   def cf_qtr
     cashflow_statements.where :period_type=>FinancialStatement::Q
+  end
+  def calcs_qtr
+    fin_calcs.where :period_type=>FinancialStatement::Q
   end
 
   MIN_MKT_CAP =   100 #IN MILLIONS
@@ -144,7 +165,7 @@ class Stock
     neg ? -float : float
   end
 
-  NON_TARGET_SECTORS = ["Equity Investment Instruments","Biotechnology"]
+  NON_TARGET_SECTORS = ["Equity Investment Instruments","Biotechnology", "Pharmaceuticals"]
 
   def non_short_target_sector?
     NON_TARGET_SECTORS.include?(sector)
@@ -188,7 +209,7 @@ class Stock
         stmt.scraped_data[key] = val/1000 if val
       end
       attrs = Hash.new
-      CashflowStatement::WSJ_MAPPINGS.each_pair do |attr, item|
+      WsjDataMappings::CF.each_pair do |attr, item|
         attrs[attr] = stmt.scraped_data[item]
       end
       stmt.update_attributes attrs
@@ -197,4 +218,37 @@ class Stock
     end
   end
 
+  #use latest period as std
+  def unit_formats(type)
+    #find statements
+    #if sales[0]< 1000 and tot assets[0] < 1000
+      #$xxx,xxx.x
+    #else
+      #$xxx,xxx
+    #end
+  end
+
+  def rescrape(pushStatus=false)
+    StockScrape.get_stock_data self, true, pushStatus
+  end
+
+  def recalc
+
+    #create recalc statements
+    income_statements.each do |stmt|
+      self.fin_calcs.find_or_create_by({period_end: stmt.period_end, period_type: stmt.period_type})
+      #calcs = stock.fin_calcs.where({period_end: stmt.period_end})
+      #if !calcs
+      #  Util.p "no fin calcs", stmt.period_end
+      #  stock.fin_calcs.find_or_create_by({period_end: stmt.period_end, period_type: stmt.period_type})
+      #end
+    end
+
+    [balance_sheets, income_statements, cashflow_statements, fin_calcs].each do |stmts|
+      stmts.each do |stmt|
+        Util.p "recalc", stmt.class.name, stmt.period_end
+        stmt.recalc()
+      end
+    end
+  end
 end

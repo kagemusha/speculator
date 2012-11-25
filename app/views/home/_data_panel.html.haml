@@ -1,0 +1,28 @@
+- #S&P,S&P Fut,S&P Asia 50 CME,Euro Stoxx 50,Nat Gas,Coal
+/- items = ["DJIA","OIL (WTI)","GOLD","EUR-USD","USD-JPY"]
+- data ||= @data
+- stock_indices = { "SP500"=>"S&P 500 Index", "NASDAQ"=>"NASDAQ Composite Index",
+                    "EURO STOXX 50"=>"EURO STOXX 50 Price EUR","Nikkei 225"=>"Nikkei 225",
+                    "SH/SH CSI 300"=>"Shanghai Shenzhen CSI 300 Index","Hang Seng"=>"Hong Kong Hang Seng Index"}
+- stock_futures = {"S&P 500 Fut"=>"S&P500FUTURE","NAZ 100 FUT"=>"NASDAQ100FUTURE"}
+- currencies = {"EUR-USD"=>"EUR-USD","USD-JPY"=>"USD-JPY"}
+- treasuries={""=>""}
+- commodities = {"WTI"=>"West Texas Intermediate, Cushing",
+                "Nat Gas HH"=>"Natural gas Henry Hub, $ per MMbtu",
+                "Gold"=>"Engelhard industrial bullion",
+                "Silver"=>"(U.S.$ equivalent)","Copper"=>"Copper, high grade: Comex spot price $ per lb."}
+
+- index_headers = ["last","%chg","open","hi","low","time"]
+- lists = [{:title=>"Stock Indexes",:table_id=>"indexes", :fields=>stock_indices,:headers=>index_headers, :link=>"http://www.bloomberg.com/markets/"},
+            {:title=>"Stock Futures",:table_id=>"futures", :fields=>stock_futures,:headers=>index_headers, :link=>"http://www.bloomberg.com/markets/"},
+            {:title=>"Commodities",:table_id=>"commodities", :fields=>commodities,:headers=>["Last","Chg","YoY Chg","Bid","Ask"],:calcs=>"commod_calcs", :link=>"http://www.bloomberg.com/markets/commodities/futures/"},
+            {:title=>"Currencies",:table_id=>"currencies", :fields=>currencies,:headers=>["Last","Chg","%Chg","time"], :link=>"http://www.bloomberg.com/markets/"}]
+
+%br
+- lists.each do |list|
+  =render :partial=>"home/data_table", :locals=>{:list=>list, :data=>data}
+
+#coalPanel
+  %strong=link_to("Coal Prices", "http://www.eia.gov/coal/news_markets/")
+  %br
+  =@coal_table.html_safe

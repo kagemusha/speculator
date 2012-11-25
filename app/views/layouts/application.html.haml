@@ -8,7 +8,8 @@
     %meta{:content => "", :name => "description"}
     %meta{:content => "", :name => "author"}
     = stylesheet_link_tag    "application", :media => "all"
-    = javascript_include_tag "application"
+    = javascript_include_tag "http://js.pusher.com/1.12/pusher.min.js"
+    = javascript_include_tag "application", :debug=>!Rails.env.production?
     = csrf_meta_tags
     = yield(:head)
   %body
@@ -23,4 +24,5 @@
             .span12
               = render 'layouts/messages'
               = yield
-          %footer
+        %footer
+          mmad no copyright b/c copyright is lame

@@ -1,9 +1,14 @@
 //this is both the page for list of new lows dates and new lows for a specific date
 %h1
   //page for new lows for a specific date
-  New Lows #{@date}
+  New Lows
+  %span#current_date #{@date}
   - if @date
     #new_low_total &nbsp;&nbsp;&nbsp;(#{@new_lows.length} total)
+    .update_new_low_date
+      Edit Date for Lows:
+      = text_field_tag :update_nl_date, ""
+      = submit_tag "Update", :id=>"update_new_low_date_btn"
 - if @date
   = render :partial=>"new_lows/daily_index", :locals=>{:new_lows=>@new_lows}
 - else

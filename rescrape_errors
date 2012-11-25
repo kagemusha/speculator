@@ -1,0 +1,634 @@
+
+
+**************************
+Rescrape 2012-11-23 16:22:11 -0500
+**************************
+Symbol: CEL      2012-11-23 16:25:03 -0500
+undefined method `shift' for nil:NilClass
+Symbol: CHSPA      2012-11-23 16:25:17 -0500
+undefined method `shift' for nil:NilClass
+Symbol: NTCF      2012-11-23 16:27:05 -0500
+undefined method `shift' for nil:NilClass
+Symbol: NNCF      2012-11-23 16:27:09 -0500
+undefined method `shift' for nil:NilClass
+Symbol: OSG      2012-11-23 16:27:16 -0500
+undefined method `shift' for nil:NilClass
+Symbol: CTDC      2012-11-23 16:30:33 -0500
+undefined method `shift' for nil:NilClass
+Symbol: DMED      2012-11-23 16:31:29 -0500
+undefined method `shift' for nil:NilClass
+Symbol: ICLN      2012-11-23 16:33:19 -0500
+undefined method `shift' for nil:NilClass
+Symbol: LZEN      2012-11-23 16:33:43 -0500
+undefined method `shift' for nil:NilClass
+Symbol: RECV      2012-11-23 16:35:38 -0500
+undefined method `shift' for nil:NilClass
+Symbol: SATC      2012-11-23 16:35:45 -0500
+undefined method `shift' for nil:NilClass
+Symbol: VISN      2012-11-23 16:36:08 -0500
+undefined method `shift' for nil:NilClass
+Symbol: PFMT      2012-11-23 16:41:22 -0500
+invalid date
+Symbol: CAF      2012-11-23 16:43:20 -0500
+undefined method `shift' for nil:NilClass
+
+
+**************************
+Rescrape 2012-11-23 17:55:12 -0500
+**************************
+Symbol: CEL      2012-11-23 17:55:40 -0500
+undefined method `shift' for nil:NilClass
+Symbol: CHSPA      2012-11-23 17:55:44 -0500
+undefined method `shift' for nil:NilClass
+Symbol: NTCF      2012-11-23 17:56:25 -0500
+undefined method `shift' for nil:NilClass
+Symbol: NNCF      2012-11-23 17:56:28 -0500
+undefined method `shift' for nil:NilClass
+Symbol: OSG      2012-11-23 17:56:30 -0500
+undefined method `shift' for nil:NilClass
+Symbol: CTDC      2012-11-23 17:57:17 -0500
+undefined method `shift' for nil:NilClass
+Symbol: DMED      2012-11-23 17:57:28 -0500
+undefined method `shift' for nil:NilClass
+Symbol: ICLN      2012-11-23 17:57:42 -0500
+undefined method `shift' for nil:NilClass
+Symbol: LZEN      2012-11-23 17:57:45 -0500
+undefined method `shift' for nil:NilClass
+Symbol: RECV      2012-11-23 17:58:04 -0500
+undefined method `shift' for nil:NilClass
+Symbol: SATC      2012-11-23 17:58:08 -0500
+undefined method `shift' for nil:NilClass
+Symbol: PFMT      2012-11-23 18:01:29 -0500
+invalid date
+Symbol: CAF      2012-11-23 18:02:21 -0500
+undefined method `shift' for nil:NilClass
+Symbol: CHW      2012-11-23 18:06:40 -0500
+undefined method `shift' for nil:NilClass
+Symbol: PLTM      2012-11-23 18:07:28 -0500
+undefined method `shift' for nil:NilClass
+Symbol: FONE      2012-11-23 18:07:31 -0500
+undefined method `shift' for nil:NilClass
+Symbol: QQQC      2012-11-23 18:07:34 -0500
+undefined method `shift' for nil:NilClass
+Symbol: EEMA      2012-11-23 18:07:59 -0500
+undefined method `shift' for nil:NilClass
+Symbol: PWND      2012-11-23 18:08:11 -0500
+undefined method `shift' for nil:NilClass
+
+
+**************************
+Rescrape 2012-11-23 18:23:21 -0500
+**************************
+Symbol: CEL      2012-11-23 18:24:16 -0500
+undefined method `shift' for nil:NilClass
+Symbol: CHSPA      2012-11-23 18:24:30 -0500
+undefined method `shift' for nil:NilClass
+Symbol: NTCF      2012-11-23 18:26:00 -0500
+undefined method `shift' for nil:NilClass
+Symbol: NNCF      2012-11-23 18:26:03 -0500
+undefined method `shift' for nil:NilClass
+Symbol: OSG      2012-11-23 18:26:11 -0500
+undefined method `shift' for nil:NilClass
+Symbol: CTDC      2012-11-23 18:27:45 -0500
+undefined method `shift' for nil:NilClass
+Symbol: DMED      2012-11-23 18:28:07 -0500
+undefined method `shift' for nil:NilClass
+Symbol: ICLN      2012-11-23 18:28:28 -0500
+undefined method `shift' for nil:NilClass
+Symbol: LZEN      2012-11-23 18:28:32 -0500
+undefined method `shift' for nil:NilClass
+Symbol: RECV      2012-11-23 18:29:12 -0500
+undefined method `shift' for nil:NilClass
+Symbol: SATC      2012-11-23 18:29:21 -0500
+undefined method `shift' for nil:NilClass
+Symbol: PFMT      2012-11-23 18:33:50 -0500
+invalid date
+Symbol: CAF      2012-11-23 18:35:04 -0500
+undefined method `shift' for nil:NilClass
+Symbol: CHW      2012-11-23 18:38:12 -0500
+undefined method `shift' for nil:NilClass
+Symbol: PLTM      2012-11-23 18:39:10 -0500
+undefined method `shift' for nil:NilClass
+Symbol: FONE      2012-11-23 18:39:13 -0500
+undefined method `shift' for nil:NilClass
+Symbol: QQQC      2012-11-23 18:39:16 -0500
+undefined method `shift' for nil:NilClass
+Symbol: EEMA      2012-11-23 18:39:56 -0500
+undefined method `shift' for nil:NilClass
+Symbol: PWND      2012-11-23 18:40:17 -0500
+undefined method `shift' for nil:NilClass
+Symbol: SYMC      2012-11-23 18:41:07 -0500
+undefined method `shift' for nil:NilClass
+Symbol: amd      2012-11-23 18:41:30 -0500
+undefined method `shift' for nil:NilClass
+Symbol: IRR      2012-11-23 18:42:55 -0500
+undefined method `shift' for nil:NilClass
+Symbol: ASA      2012-11-23 18:43:51 -0500
+undefined method `shift' for nil:NilClass
+
+
+**************************
+Rescrape 2012-11-23 18:54:15 -0500
+**************************
+
+
+**************************
+Rescrape 2012-11-23 18:56:57 -0500
+**************************
+
+
+**************************
+Rescrape 2012-11-23 18:57:26 -0500
+**************************
+
+
+**************************
+Rescrape 2012-11-23 18:58:34 -0500
+**************************
+Symbol: CEL      2012-11-23 18:58:36 -0500
+undefined method `shift' for nil:NilClass
+Symbol: CHSPA      2012-11-23 18:58:41 -0500
+undefined method `shift' for nil:NilClass
+Symbol: NTCF      2012-11-23 18:58:44 -0500
+undefined method `shift' for nil:NilClass
+Symbol: NNCF      2012-11-23 18:58:46 -0500
+undefined method `shift' for nil:NilClass
+Symbol: OSG      2012-11-23 18:58:52 -0500
+undefined method `shift' for nil:NilClass
+Symbol: CTDC      2012-11-23 18:59:04 -0500
+undefined method `shift' for nil:NilClass
+Symbol: DMED      2012-11-23 18:59:08 -0500
+undefined method `shift' for nil:NilClass
+Symbol: ICLN      2012-11-23 18:59:10 -0500
+undefined method `shift' for nil:NilClass
+Symbol: LZEN      2012-11-23 18:59:17 -0500
+undefined method `shift' for nil:NilClass
+Symbol: RECV      2012-11-23 18:59:20 -0500
+undefined method `shift' for nil:NilClass
+Symbol: SATC      2012-11-23 18:59:24 -0500
+undefined method `shift' for nil:NilClass
+Symbol: PFMT      2012-11-23 18:59:33 -0500
+invalid date
+Symbol: CAF      2012-11-23 18:59:35 -0500
+undefined method `shift' for nil:NilClass
+Symbol: CHW      2012-11-23 18:59:39 -0500
+undefined method `shift' for nil:NilClass
+Symbol: PLTM      2012-11-23 18:59:42 -0500
+undefined method `shift' for nil:NilClass
+Symbol: FONE      2012-11-23 18:59:47 -0500
+undefined method `shift' for nil:NilClass
+Symbol: QQQC      2012-11-23 18:59:50 -0500
+undefined method `shift' for nil:NilClass
+Symbol: EEMA      2012-11-23 18:59:54 -0500
+undefined method `shift' for nil:NilClass
+Symbol: PWND      2012-11-23 18:59:57 -0500
+undefined method `shift' for nil:NilClass
+Symbol: IRR      2012-11-23 19:00:33 -0500
+undefined method `shift' for nil:NilClass
+Symbol: ASA      2012-11-23 19:00:35 -0500
+undefined method `shift' for nil:NilClass
+Symbol: KVA      2012-11-23 19:03:33 -0500
+undefined method `shift' for nil:NilClass
+Symbol: NNCE      2012-11-23 19:05:03 -0500
+undefined method `shift' for nil:NilClass
+Symbol: ATPG      2012-11-23 19:08:04 -0500
+undefined method `shift' for nil:NilClass
+Symbol: ENVI      2012-11-23 19:15:39 -0500
+invalid date
+Symbol: EAGLW      2012-11-23 19:17:04 -0500
+undefined method `shift' for nil:NilClass
+Symbol: EUFN      2012-11-23 19:19:54 -0500
+undefined method `shift' for nil:NilClass
+Symbol: MXWL      2012-11-23 19:20:53 -0500
+undefined method `shift' for nil:NilClass
+Symbol: NEXS      2012-11-23 19:21:21 -0500
+undefined method `shift' for nil:NilClass
+
+
+**************************
+Rescrape 2012-11-23 19:22:17 -0500
+**************************
+Symbol: CEL      2012-11-23 19:22:21 -0500
+undefined method `shift' for nil:NilClass
+Symbol: CHSPA      2012-11-23 19:22:26 -0500
+undefined method `shift' for nil:NilClass
+Symbol: NTCF      2012-11-23 19:22:28 -0500
+undefined method `shift' for nil:NilClass
+Symbol: NNCF      2012-11-23 19:22:31 -0500
+undefined method `shift' for nil:NilClass
+Symbol: OSG      2012-11-23 19:22:39 -0500
+undefined method `shift' for nil:NilClass
+Symbol: CTDC      2012-11-23 19:22:43 -0500
+undefined method `shift' for nil:NilClass
+Symbol: DMED      2012-11-23 19:22:48 -0500
+undefined method `shift' for nil:NilClass
+Symbol: ICLN      2012-11-23 19:22:50 -0500
+undefined method `shift' for nil:NilClass
+Symbol: LZEN      2012-11-23 19:23:01 -0500
+undefined method `shift' for nil:NilClass
+Symbol: RECV      2012-11-23 19:23:06 -0500
+undefined method `shift' for nil:NilClass
+Symbol: SATC      2012-11-23 19:23:10 -0500
+undefined method `shift' for nil:NilClass
+Symbol: PFMT      2012-11-23 19:23:14 -0500
+invalid date
+Symbol: CAF      2012-11-23 19:23:19 -0500
+undefined method `shift' for nil:NilClass
+Symbol: CHW      2012-11-23 19:23:22 -0500
+undefined method `shift' for nil:NilClass
+Symbol: PLTM      2012-11-23 19:23:26 -0500
+undefined method `shift' for nil:NilClass
+Symbol: FONE      2012-11-23 19:23:34 -0500
+undefined method `shift' for nil:NilClass
+Symbol: QQQC      2012-11-23 19:23:36 -0500
+undefined method `shift' for nil:NilClass
+Symbol: EEMA      2012-11-23 19:23:40 -0500
+undefined method `shift' for nil:NilClass
+Symbol: PWND      2012-11-23 19:23:44 -0500
+undefined method `shift' for nil:NilClass
+Symbol: IRR      2012-11-23 19:23:48 -0500
+undefined method `shift' for nil:NilClass
+Symbol: ASA      2012-11-23 19:23:51 -0500
+undefined method `shift' for nil:NilClass
+Symbol: KVA      2012-11-23 19:23:56 -0500
+undefined method `shift' for nil:NilClass
+Symbol: NNCE      2012-11-23 19:23:58 -0500
+undefined method `shift' for nil:NilClass
+Symbol: ATPG      2012-11-23 19:24:02 -0500
+undefined method `shift' for nil:NilClass
+Symbol: EAGLW      2012-11-23 19:24:06 -0500
+undefined method `shift' for nil:NilClass
+Symbol: EUFN      2012-11-23 19:24:12 -0500
+undefined method `shift' for nil:NilClass
+Symbol: NEXS      2012-11-23 19:24:31 -0500
+undefined method `shift' for nil:NilClass
+Symbol: PLCM      2012-11-23 19:24:46 -0500
+undefined method `shift' for nil:NilClass
+Symbol: PSTL      2012-11-23 19:24:51 -0500
+undefined method `shift' for nil:NilClass
+Symbol: UDRL      2012-11-23 19:28:28 -0500
+undefined method `shift' for nil:NilClass
+Symbol: GULF      2012-11-23 19:29:25 -0500
+undefined method `shift' for nil:NilClass
+Symbol: cel      2012-11-23 19:29:28 -0500
+undefined method `shift' for nil:NilClass
+Symbol: TROVU      2012-11-23 19:38:59 -0500
+undefined method `shift' for nil:NilClass
+Symbol: AUL      2012-11-23 19:40:08 -0500
+undefined method `shift' for nil:NilClass
+
+
+**************************
+Rescrape 2012-11-23 19:48:38 -0500
+**************************
+Symbol: CEL      2012-11-23 19:48:53 -0500
+undefined method `shift' for nil:NilClass
+Symbol: CHSPA      2012-11-23 19:49:00 -0500
+undefined method `shift' for nil:NilClass
+Symbol: NTCF      2012-11-23 19:49:44 -0500
+undefined method `shift' for nil:NilClass
+Symbol: NNCF      2012-11-23 19:49:48 -0500
+undefined method `shift' for nil:NilClass
+Symbol: OSG      2012-11-23 19:49:51 -0500
+undefined method `shift' for nil:NilClass
+Symbol: CTDC      2012-11-23 19:50:39 -0500
+undefined method `shift' for nil:NilClass
+Symbol: DMED      2012-11-23 19:50:53 -0500
+undefined method `shift' for nil:NilClass
+Symbol: ICLN      2012-11-23 19:51:12 -0500
+undefined method `shift' for nil:NilClass
+Symbol: LZEN      2012-11-23 19:51:18 -0500
+undefined method `shift' for nil:NilClass
+Symbol: RECV      2012-11-23 19:51:50 -0500
+undefined method `shift' for nil:NilClass
+Symbol: SATC      2012-11-23 19:51:54 -0500
+undefined method `shift' for nil:NilClass
+Symbol: PFMT      2012-11-23 19:56:00 -0500
+invalid date
+Symbol: CAF      2012-11-23 19:56:44 -0500
+undefined method `shift' for nil:NilClass
+Symbol: CHW      2012-11-23 19:59:34 -0500
+undefined method `shift' for nil:NilClass
+Symbol: PLTM      2012-11-23 20:00:14 -0500
+undefined method `shift' for nil:NilClass
+Symbol: FONE      2012-11-23 20:00:18 -0500
+undefined method `shift' for nil:NilClass
+Symbol: QQQC      2012-11-23 20:00:21 -0500
+undefined method `shift' for nil:NilClass
+Symbol: EEMA      2012-11-23 20:00:50 -0500
+undefined method `shift' for nil:NilClass
+Symbol: PWND      2012-11-23 20:01:07 -0500
+undefined method `shift' for nil:NilClass
+Symbol: IRR      2012-11-23 20:02:06 -0500
+undefined method `shift' for nil:NilClass
+Symbol: ASA      2012-11-23 20:02:41 -0500
+undefined method `shift' for nil:NilClass
+Symbol: KVA      2012-11-23 20:03:01 -0500
+undefined method `shift' for nil:NilClass
+Symbol: NNCE      2012-11-23 20:03:06 -0500
+undefined method `shift' for nil:NilClass
+Symbol: ATPG      2012-11-23 20:03:12 -0500
+undefined method `shift' for nil:NilClass
+Symbol: EAGLW      2012-11-23 20:03:18 -0500
+undefined method `shift' for nil:NilClass
+Symbol: EUFN      2012-11-23 20:03:27 -0500
+undefined method `shift' for nil:NilClass
+Symbol: NEXS      2012-11-23 20:03:32 -0500
+undefined method `shift' for nil:NilClass
+Symbol: PSTL      2012-11-23 20:03:36 -0500
+undefined method `shift' for nil:NilClass
+Symbol: UDRL      2012-11-23 20:03:46 -0500
+undefined method `shift' for nil:NilClass
+Symbol: GULF      2012-11-23 20:03:50 -0500
+undefined method `shift' for nil:NilClass
+Symbol: cel      2012-11-23 20:03:53 -0500
+undefined method `shift' for nil:NilClass
+Symbol: TROVU      2012-11-23 20:03:55 -0500
+undefined method `shift' for nil:NilClass
+Symbol: AUL      2012-11-23 20:04:00 -0500
+undefined method `shift' for nil:NilClass
+
+
+**************************
+Rescrape 2012-11-23 20:35:21 -0500
+**************************
+Symbol: CEL      2012-11-23 20:35:42 -0500
+undefined method `shift' for nil:NilClass
+Symbol: CHSPA      2012-11-23 20:35:46 -0500
+undefined method `shift' for nil:NilClass
+Symbol: NTCF      2012-11-23 20:35:49 -0500
+undefined method `shift' for nil:NilClass
+Symbol: NNCF      2012-11-23 20:35:55 -0500
+undefined method `shift' for nil:NilClass
+Symbol: OSG      2012-11-23 20:36:04 -0500
+undefined method `shift' for nil:NilClass
+Symbol: CTDC      2012-11-23 20:36:23 -0500
+undefined method `shift' for nil:NilClass
+Symbol: DMED      2012-11-23 20:36:29 -0500
+undefined method `shift' for nil:NilClass
+Symbol: ICLN      2012-11-23 20:36:33 -0500
+undefined method `shift' for nil:NilClass
+Symbol: LZEN      2012-11-23 20:36:44 -0500
+undefined method `shift' for nil:NilClass
+Symbol: RECV      2012-11-23 20:36:49 -0500
+undefined method `shift' for nil:NilClass
+Symbol: SATC      2012-11-23 20:36:54 -0500
+undefined method `shift' for nil:NilClass
+Symbol: PFMT      2012-11-23 20:37:03 -0500
+invalid date
+Symbol: CAF      2012-11-23 20:37:05 -0500
+undefined method `shift' for nil:NilClass
+Symbol: CHW      2012-11-23 20:37:10 -0500
+undefined method `shift' for nil:NilClass
+Symbol: PLTM      2012-11-23 20:37:12 -0500
+undefined method `shift' for nil:NilClass
+Symbol: FONE      2012-11-23 20:37:21 -0500
+undefined method `shift' for nil:NilClass
+Symbol: QQQC      2012-11-23 20:37:26 -0500
+undefined method `shift' for nil:NilClass
+Symbol: EEMA      2012-11-23 20:37:29 -0500
+undefined method `shift' for nil:NilClass
+Symbol: PWND      2012-11-23 20:37:37 -0500
+undefined method `shift' for nil:NilClass
+Symbol: IRR      2012-11-23 20:38:10 -0500
+undefined method `shift' for nil:NilClass
+Symbol: ASA      2012-11-23 20:38:13 -0500
+undefined method `shift' for nil:NilClass
+Symbol: KVA      2012-11-23 20:39:54 -0500
+undefined method `shift' for nil:NilClass
+Symbol: LEA      2012-11-23 20:40:48 -0500
+undefined method `shift' for nil:NilClass
+Symbol: NNCE      2012-11-23 20:41:25 -0500
+undefined method `shift' for nil:NilClass
+Symbol: ATPG      2012-11-23 20:43:49 -0500
+undefined method `shift' for nil:NilClass
+Symbol: BUR      2012-11-23 20:45:23 -0500
+undefined method `shift' for nil:NilClass
+Symbol: DECK      2012-11-23 20:46:41 -0500
+undefined method `shift' for nil:NilClass
+Symbol: EVAC      2012-11-23 20:47:09 -0500
+undefined method `shift' for nil:NilClass
+Symbol: EAGLW      2012-11-23 20:47:16 -0500
+undefined method `shift' for nil:NilClass
+Symbol: EUFN      2012-11-23 20:47:24 -0500
+undefined method `shift' for nil:NilClass
+Symbol: MRCY      2012-11-23 20:47:57 -0500
+undefined method `shift' for nil:NilClass
+Symbol: NEXS      2012-11-23 20:48:05 -0500
+undefined method `shift' for nil:NilClass
+Symbol: PLNR      2012-11-23 20:48:35 -0500
+undefined method `shift' for nil:NilClass
+Symbol: PSTL      2012-11-23 20:49:11 -0500
+undefined method `shift' for nil:NilClass
+Symbol: REGI      2012-11-23 20:49:37 -0500
+undefined method `shift' for nil:NilClass
+Symbol: RIMG      2012-11-23 20:49:56 -0500
+undefined method `shift' for nil:NilClass
+Symbol: THER      2012-11-23 20:50:16 -0500
+undefined method `shift' for nil:NilClass
+Symbol: UDRL      2012-11-23 20:50:46 -0500
+undefined method `shift' for nil:NilClass
+Symbol: GULF      2012-11-23 20:51:05 -0500
+undefined method `shift' for nil:NilClass
+Symbol: cel      2012-11-23 20:51:07 -0500
+undefined method `shift' for nil:NilClass
+Symbol: ESI      2012-11-23 20:52:25 -0500
+undefined method `shift' for nil:NilClass
+Symbol: TROVU      2012-11-23 20:53:19 -0500
+undefined method `shift' for nil:NilClass
+Symbol: AUL      2012-11-23 20:53:26 -0500
+undefined method `shift' for nil:NilClass
+Symbol: BGB      2012-11-23 20:53:42 -0500
+undefined method `shift' for nil:NilClass
+Symbol: HIX      2012-11-23 20:54:08 -0500
+undefined method `shift' for nil:NilClass
+Symbol: OFS      2012-11-23 20:54:49 -0500
+undefined method `shift' for nil:NilClass
+Symbol: JHI      2012-11-23 20:55:59 -0500
+undefined method `shift' for nil:NilClass
+Symbol: DEX      2012-11-23 20:56:38 -0500
+undefined method `shift' for nil:NilClass
+Symbol: HTY      2012-11-23 20:56:41 -0500
+undefined method `shift' for nil:NilClass
+Symbol: GNE      2012-11-23 20:56:49 -0500
+invalid date
+
+
+**************************
+Rescrape 2012-11-23 21:03:15 -0500
+**************************
+Symbol: CEL      2012-11-23 21:03:31 -0500
+undefined method `shift' for nil:NilClass
+Symbol: CHSPA      2012-11-23 21:03:36 -0500
+undefined method `shift' for nil:NilClass
+Symbol: XNY      2012-11-23 21:04:03 -0500
+undefined method `shift' for nil:NilClass
+Symbol: NTCF      2012-11-23 21:05:15 -0500
+undefined method `shift' for nil:NilClass
+Symbol: NNCF      2012-11-23 21:05:17 -0500
+undefined method `shift' for nil:NilClass
+Symbol: OSG      2012-11-23 21:05:23 -0500
+undefined method `shift' for nil:NilClass
+Symbol: CTDC      2012-11-23 21:06:22 -0500
+undefined method `shift' for nil:NilClass
+Symbol: DMED      2012-11-23 21:06:38 -0500
+undefined method `shift' for nil:NilClass
+Symbol: ICLN      2012-11-23 21:06:50 -0500
+undefined method `shift' for nil:NilClass
+Symbol: LZEN      2012-11-23 21:06:53 -0500
+undefined method `shift' for nil:NilClass
+Symbol: RECV      2012-11-23 21:07:22 -0500
+undefined method `shift' for nil:NilClass
+Symbol: SATC      2012-11-23 21:07:26 -0500
+undefined method `shift' for nil:NilClass
+Symbol: PFMT      2012-11-23 21:11:15 -0500
+invalid date
+Symbol: CAF      2012-11-23 21:11:51 -0500
+undefined method `shift' for nil:NilClass
+Symbol: CHW      2012-11-23 21:14:13 -0500
+undefined method `shift' for nil:NilClass
+Symbol: PLTM      2012-11-23 21:14:47 -0500
+undefined method `shift' for nil:NilClass
+Symbol: FONE      2012-11-23 21:15:02 -0500
+undefined method `shift' for nil:NilClass
+Symbol: QQQC      2012-11-23 21:15:06 -0500
+undefined method `shift' for nil:NilClass
+Symbol: EEMA      2012-11-23 21:15:30 -0500
+undefined method `shift' for nil:NilClass
+Symbol: PWND      2012-11-23 21:15:43 -0500
+undefined method `shift' for nil:NilClass
+Symbol: IRR      2012-11-23 21:16:47 -0500
+undefined method `shift' for nil:NilClass
+Symbol: ASA      2012-11-23 21:17:07 -0500
+undefined method `shift' for nil:NilClass
+Symbol: KVA      2012-11-23 21:17:27 -0500
+undefined method `shift' for nil:NilClass
+Symbol: NNCE      2012-11-23 21:17:44 -0500
+undefined method `shift' for nil:NilClass
+Symbol: ATPG      2012-11-23 21:17:53 -0500
+undefined method `shift' for nil:NilClass
+Symbol: EAGLW      2012-11-23 21:19:04 -0500
+undefined method `shift' for nil:NilClass
+Symbol: EUFN      2012-11-23 21:19:18 -0500
+undefined method `shift' for nil:NilClass
+Symbol: NEXS      2012-11-23 21:19:55 -0500
+undefined method `shift' for nil:NilClass
+Symbol: PSTL      2012-11-23 21:20:26 -0500
+undefined method `shift' for nil:NilClass
+Symbol: UDRL      2012-11-23 21:21:08 -0500
+undefined method `shift' for nil:NilClass
+Symbol: GULF      2012-11-23 21:21:10 -0500
+undefined method `shift' for nil:NilClass
+Symbol: cel      2012-11-23 21:21:12 -0500
+undefined method `shift' for nil:NilClass
+
+
+**************************
+Rescrape 2012-11-23 21:21:52 -0500
+**************************
+Symbol: CEL      2012-11-23 21:21:54 -0500
+undefined method `shift' for nil:NilClass
+Symbol: CHSPA      2012-11-23 21:21:57 -0500
+undefined method `shift' for nil:NilClass
+Symbol: NTCF      2012-11-23 21:22:17 -0500
+undefined method `shift' for nil:NilClass
+Symbol: NNCF      2012-11-23 21:22:19 -0500
+undefined method `shift' for nil:NilClass
+Symbol: OSG      2012-11-23 21:22:22 -0500
+undefined method `shift' for nil:NilClass
+Symbol: CTDC      2012-11-23 21:22:26 -0500
+undefined method `shift' for nil:NilClass
+Symbol: DMED      2012-11-23 21:22:30 -0500
+undefined method `shift' for nil:NilClass
+Symbol: ICLN      2012-11-23 21:22:43 -0500
+undefined method `shift' for nil:NilClass
+Symbol: LZEN      2012-11-23 21:22:46 -0500
+undefined method `shift' for nil:NilClass
+Symbol: RECV      2012-11-23 21:22:48 -0500
+undefined method `shift' for nil:NilClass
+Symbol: SATC      2012-11-23 21:22:52 -0500
+undefined method `shift' for nil:NilClass
+Symbol: PFMT      2012-11-23 21:22:55 -0500
+invalid date
+Symbol: CAF      2012-11-23 21:22:58 -0500
+undefined method `shift' for nil:NilClass
+Symbol: CHW      2012-11-23 21:23:00 -0500
+undefined method `shift' for nil:NilClass
+Symbol: PLTM      2012-11-23 21:23:03 -0500
+undefined method `shift' for nil:NilClass
+Symbol: FONE      2012-11-23 21:23:07 -0500
+undefined method `shift' for nil:NilClass
+Symbol: QQQC      2012-11-23 21:23:10 -0500
+undefined method `shift' for nil:NilClass
+Symbol: EEMA      2012-11-23 21:23:12 -0500
+undefined method `shift' for nil:NilClass
+Symbol: PWND      2012-11-23 21:23:15 -0500
+undefined method `shift' for nil:NilClass
+Symbol: IRR      2012-11-23 21:23:17 -0500
+undefined method `shift' for nil:NilClass
+Symbol: ASA      2012-11-23 21:23:19 -0500
+undefined method `shift' for nil:NilClass
+Symbol: KVA      2012-11-23 21:23:23 -0500
+undefined method `shift' for nil:NilClass
+Symbol: NNCE      2012-11-23 21:23:25 -0500
+undefined method `shift' for nil:NilClass
+Symbol: ATPG      2012-11-23 21:23:28 -0500
+undefined method `shift' for nil:NilClass
+Symbol: EAGLW      2012-11-23 21:23:31 -0500
+undefined method `shift' for nil:NilClass
+Symbol: EUFN      2012-11-23 21:23:34 -0500
+undefined method `shift' for nil:NilClass
+Symbol: NEXS      2012-11-23 21:23:38 -0500
+undefined method `shift' for nil:NilClass
+Symbol: PSTL      2012-11-23 21:23:41 -0500
+undefined method `shift' for nil:NilClass
+Symbol: UDRL      2012-11-23 21:23:44 -0500
+undefined method `shift' for nil:NilClass
+Symbol: GULF      2012-11-23 21:23:47 -0500
+undefined method `shift' for nil:NilClass
+Symbol: cel      2012-11-23 21:23:49 -0500
+undefined method `shift' for nil:NilClass
+Symbol: TROVU      2012-11-23 21:25:19 -0500
+undefined method `shift' for nil:NilClass
+Symbol: AUL      2012-11-23 21:25:54 -0500
+undefined method `shift' for nil:NilClass
+Symbol: BGB      2012-11-23 21:26:26 -0500
+undefined method `shift' for nil:NilClass
+Symbol: HIX      2012-11-23 21:26:28 -0500
+undefined method `shift' for nil:NilClass
+Symbol: OFS      2012-11-23 21:26:30 -0500
+undefined method `shift' for nil:NilClass
+Symbol: JHI      2012-11-23 21:26:32 -0500
+undefined method `shift' for nil:NilClass
+Symbol: DEX      2012-11-23 21:26:35 -0500
+undefined method `shift' for nil:NilClass
+Symbol: HTY      2012-11-23 21:26:37 -0500
+undefined method `shift' for nil:NilClass
+Symbol: NWID      2012-11-23 21:28:40 -0500
+undefined method `shift' for nil:NilClass
+Symbol: SPLP      2012-11-23 21:29:00 -0500
+invalid date
+Symbol: AONE      2012-11-23 21:30:13 -0500
+undefined method `shift' for nil:NilClass
+Symbol: CGEIW      2012-11-23 21:31:25 -0500
+undefined method `shift' for nil:NilClass
+Symbol: DRTX      2012-11-23 21:31:46 -0500
+invalid date
+Symbol: MOTRR      2012-11-23 21:34:51 -0500
+undefined method `shift' for nil:NilClass
+Symbol: BIS      2012-11-23 21:35:48 -0500
+undefined method `shift' for nil:NilClass
+Symbol: SYBTP      2012-11-23 21:37:15 -0500
+undefined method `shift' for nil:NilClass
+Symbol: SQNM      2012-11-23 21:37:40 -0500
+undefined method `shift' for nil:NilClass
+
+
+**************************
+Rescrape 2012-11-23 22:46:44 -0500
+**************************
+
+
+**************************
+Rescrape 2012-11-24 08:58:14 -0500
+**************************

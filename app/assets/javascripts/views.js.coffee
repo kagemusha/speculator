@@ -30,14 +30,14 @@ views.opinionTmpl = (opinion) ->
       %br
       #{opinion.credit_rating}
       %br
-      %lbl General:
+      %lbl General Comments:
       %br
       #{opinion.general_comments}
       %br
       %lbl Action:&nbsp;
       %span.action #{opinion.action}
       %br
-      #{views.link "Update", "#", {class: "editOpinion btn", stock_id: opinion.stock_id}}
+      #{views.link "Update", "#", {class: "editOpinion btn", opinion_id: opinion._id, stock_id: opinion.stock_id}}
     """
 
 views.link = (label="<blank>", href="#", options={}, reverse=false) ->

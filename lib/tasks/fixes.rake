@@ -1,4 +1,10 @@
 namespace :fixes do
+  desc "rescrape all"
+  task :rescrape_all => :environment do    #without :environment, doesn't load app dir'
+    Fixes.rescrape_all
+    Util.p "Rescreped all"
+  end
+
   desc "convert floats in stock objects"
   task :convert_floats => :environment do    #without :environment, doesn't load app dir'
     Fixes.stock_nums
@@ -9,6 +15,12 @@ namespace :fixes do
   task :recalc_stmts => :environment do    #without :environment, doesn't load app dir'
     Fixes.recalc_statements
     Util.p "Recalced stetments"
+  end
+
+  desc "make capex pos"
+  task :capex_pos => :environment do    #without :environment, doesn't load app dir'
+    Fixes.make_capex_pos
+    Util.p "Capex pos"
   end
 
   desc "merge symbols ci"

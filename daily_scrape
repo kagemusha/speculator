@@ -1,0 +1,2 @@
+rake new_lows:daily_scrape --trace
+mongodump
