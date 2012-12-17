@@ -12,6 +12,7 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 RSpec.configure do |config|
   config.include(EmailSpec::Helpers)
   config.include(EmailSpec::Matchers)
+  config.include Rails.application.routes.url_helpers
   # ## Mock Framework
   #
   # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:
@@ -40,14 +41,14 @@ RSpec.configure do |config|
   config.order = "random"  
 
   # Clean up the database
-  require 'database_cleaner'
-  config.before(:suite) do
-    DatabaseCleaner.strategy = :truncation
-    DatabaseCleaner.orm = "mongoid"
-  end
-
-  config.before(:each) do
-    #DatabaseCleaner.clean
-  end
+  #require 'database_cleaner'
+  #config.before(:suite) do
+  #  DatabaseCleaner.strategy = :truncation
+  #  DatabaseCleaner.orm = "mongoid"
+  #end
+  #
+  #config.before(:each) do
+  #  #DatabaseCleaner.clean
+  #end
 
 end

@@ -15,7 +15,11 @@ Speculator::Application.routes.draw do
   match "test_task" => "tasks#test_task"
   resources :new_lows
   resources :opinions
-  resources :stocks
+
+  resources :stocks do
+    resources :notes
+    resources :links
+  end
 
 
   authenticated :user do

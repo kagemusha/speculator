@@ -1,0 +1,11 @@
+= link_to "Close", "#", :class=>"close_note"
+&nbsp;
+= link_to "Edit", "#", :class=>"edit_note_link"
+%br
+%br
+%strong=@note.title
+#{@note.stock.symbol} #{@note.updated_at.strftime("%Y-%m-%d")}
+%br
+%br
+#{@note.content}
+= js "window.closeNoteCB"

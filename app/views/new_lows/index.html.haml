@@ -16,7 +16,7 @@
   %ul
     - @date_counts.each do |dc|
       %li
-        #{link_to dc[0], "/new_lows/#{dc[0]}", :class=>"new_low_date_link"}
+        #{link_to "#{dc[0]} #{dc[0].strftime "%a"}" , "/new_lows/#{dc[0]}", :class=>"new_low_date_link"}
         (#{dc[1]})
 
 

@@ -1,0 +1,19 @@
+- type_pl = item_type.pluralize
+- items = eval "stock.#{type_pl}"
+- new_path = eval "new_stock_#{item_type}_path(stock)"
+%div{class: type_pl}
+  %strong #{type_pl.capitalize} #{link_to "Add", new_path }
+  - if !items.blank?
+    %ul{class: "stock_#{type_pl}"}
+      - items.each do |item|
+        - del_item_path = eval "stock_#{item_type}_path(stock, item)"
+        - item_path = defined?(item_path_expr) ? eval(item_path_expr) : del_item_path
+        - #label = "#{item.updated_at.strftime("%Y-%m-%d")} #{item.title}"
+        - label = item.title
+        %li
+          = link_to "x", "#", :method=>"delete", :class=>"del_#{item_type}", :url=>del_item_path
+          - if item_type=="note"
+            = link_to label, "#", :class=>"show_note", :url=>item_path
+          - else
+            = link_to label, item_path, target: "_blank"
+

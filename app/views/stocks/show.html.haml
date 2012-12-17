@@ -1,1 +1,10 @@
-= render :partial=>"stocks/show", :locals=>{:symbol=>@symbol,:stock=>@stock, :cur_data=>@current_data}
+Symbol:
+= text_field_tag :symbol, "", :id=>"symbol_field"
+= submit_tag "Get Data", :id=>"get_stock_data_btn"
+%br
+#stock_scrape_status
+%br
+.stock_panel
+  = render :partial=>"stocks/show", :locals=>{:symbol=>@symbol,:stock=>@stock, :cur_data=>@current_data}
+
+= js "initStockPg"

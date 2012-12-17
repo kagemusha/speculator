@@ -4,35 +4,47 @@ views.opinionTmpl = (opinion) ->
   log "opiniontmpl", opinion
   _m.haHtml """
     #{_m.haTag "div", {class: "show_opinion", id: opinion.stock_id} }
-      %stock #{opinion.symbol}
+      %lbl Date: #{opinion.updated_at.toString('M/d/yyyy')}
       %br
       %lbl Killer:
       %br
-      #{opinion.killer}
+      .opinion_field
+        #{opinion.killer}
       %br
       %lbl Sales:
       %br
-      #{opinion.sales_comments}
+      .opinion_field
+        #{opinion.sales_comments}
       %br
       %lbl Income:
       %br
-      #{opinion.pl_comments}
+      .opinion_field
+        #{opinion.pl_comments}
       %br
       %lbl Balance Sheet:
       %br
-      #{opinion.bs_comments}
+      .opinion_field
+        #{opinion.bs_comments}
       %br
       %lbl Cash Flow:
       %br
-      #{opinion.cf_comments}
+      .opinion_field
+        #{opinion.cf_comments}
+      %br
+      %lbl Hidden Treasure:
+      %br
+      .opinion_field
+        #{opinion.hidden_treasure}
       %br
       %lbl Credit Rating:
       %br
-      #{opinion.credit_rating}
+      .opinion_field
+        #{opinion.credit_rating}
       %br
       %lbl General Comments:
       %br
-      #{opinion.general_comments}
+      .opinion_field
+        #{opinion.general_comments}
       %br
       %lbl Action:&nbsp;
       %span.action #{opinion.action}

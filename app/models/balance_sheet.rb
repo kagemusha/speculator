@@ -20,7 +20,7 @@ class BalanceSheet < FinancialStatement
   field :charge_provision, type: Float
   field :tot_liab, type: Float
   field :tang_assets, type: Float #calced
-  field :net_eq, type: Float #calced   #obsolete
+  #field :net_eq, type: Float #calced   #obsolete
   field :net_tang_eq, type: Float #calced
 
   #WSJ_MAPPINGS = {:cash_and_st_inv=>"Cash & Short Term Investments", :acct_rec=>"Total Accounts Receivable",
@@ -34,7 +34,7 @@ class BalanceSheet < FinancialStatement
   def recalc()
     if tot_assets and intangibles and tot_liab
       self.tang_assets = tot_assets - intangibles
-      self.net_tang_eq = self.net_eq = tang_assets - tot_liab
+      self.net_tang_eq = tang_assets - tot_liab
     end
   end
 

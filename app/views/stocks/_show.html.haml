@@ -1,5 +1,8 @@
-- cur_items = {"Mkt Cap"=>cur_data["mkt cap"], "Shares Out"=>cur_data["shares out"],
-                "Float"=>cur_data["float"],"Shares Short"=>cur_data["short shares"]}
+- cur_items = { "Mkt Cap"=>cur_data["mkt cap"],
+                "Eq Surplus"=>stock.tang_eq_surplus,
+                "Shares Out"=>cur_data["shares out"],
+                "Float"=>cur_data["float"],
+                "Shares Short"=>cur_data["short shares"]}
 - stock_panel_id = "##{url ||= ""}"
 - opinion = stock.opinions.length > 0 ? stock.opinions.first : nil
 - if !stock
@@ -52,13 +55,13 @@
     .stock_stats
       - cur_items.each_pair do |lbl, val|
         %span.cur_item_lbl #{lbl}:
-        %span.cur_item #{val}&nbsp;&nbsp;
+        %span.cur_item #{format_stat(val)}&nbsp;&nbsp;
     - pct_ch_fields = [:sales, :tot_assets] #, :ebda  will look for a <field>_growth elem)
     - pl_attrs = [:sales, :net_inc, :ebda]
     - cf_attrs1 = [:capex,:net_asset_inv]
     - calc_attrs = [:m_cashflow]
     - cf_attrs2 = [:divs_paid]
-    - bs_attrs = [:tot_assets, :tot_cur_assets, :tot_liab, :net_eq]
+    - bs_attrs = [:tot_assets, :tot_cur_assets, :tot_liab, :net_tang_eq]
     .scrollwrap
       .stock_section{:symbol=>stock.symbol}
         - inc="Inc"
@@ -66,24 +69,28 @@
         - cf="CFlow"
         - q_fmt = "todo" #stock.num_format(q)
         - a_fmt = "todo" #stock.num_format(a)
-        = render :partial=>"stocks/fin_stmt", :locals=>{:title=>"#{inc}-A", :stmts=>stock.pl_annual,
-                :attrs=>pl_attrs, :growth_fields=>pct_ch_fields}
-        = render :partial=>"stocks/fin_stmt", :locals=>{:title=>nil, :stmts=>stock.cf_annual,
-                :attrs=>cf_attrs1, :growth_fields=>pct_ch_fields}
-        = render :partial=>"stocks/fin_stmt", :locals=>{:title=>nil, :stmts=>stock.calcs_annual,
-                :attrs=>calc_attrs, :growth_fields=>pct_ch_fields}
-        = render :partial=>"stocks/fin_stmt", :locals=>{:title=>nil, :stmts=>stock.cf_annual,
-                :attrs=>cf_attrs2, :growth_fields=>pct_ch_fields}
-        = render :partial=>"stocks/fin_stmt", :locals=>{:title=>"#{bs}-A", :stmts=>stock.bs_annual,
-                :attrs=>bs_attrs, :growth_fields=>pct_ch_fields}
-        = render :partial=>"stocks/fin_stmt", :locals=>{:title=>"#{inc}-Q", :stmts=>stock.pl_qtr,
-                :attrs=>pl_attrs, :growth_fields=>pct_ch_fields}
-        = render :partial=>"stocks/fin_stmt", :locals=>{:title=>nil, :stmts=>stock.cf_qtr,
-                :attrs=>cf_attrs1, :growth_fields=>pct_ch_fields}
-        = render :partial=>"stocks/fin_stmt", :locals=>{:title=>nil, :stmts=>stock.calcs_qtr,
-                :attrs=>calc_attrs, :growth_fields=>pct_ch_fields}
-        = render :partial=>"stocks/fin_stmt", :locals=>{:title=>nil, :stmts=>stock.cf_qtr,
-                :attrs=>cf_attrs2, :growth_fields=>pct_ch_fields}
-        = render :partial=>"stocks/fin_stmt", :locals=>{:title=>"#{bs}-Q", :stmts=>stock.bs_qtr,
-                :attrs=>bs_attrs, :growth_fields=>pct_ch_fields}
-    %input{:type=>'range', :min=>0, :max=>"2600", :value=>"1300", :step=>"10"}
+        = render :partial=>"stocks/fin_stmt", :locals=>{:title=>"#{inc}-A", :stock=>stock,
+                          :period_type=>"annual", :stmt_type=>"income-statement",
+                          :stmts=>stock.pl_annual,:attrs=>pl_attrs, :growth_fields=>pct_ch_fields}
+        = render :partial=>"stocks/fin_stmt", :locals=>{:stmts=>stock.cf_annual, :attrs=>cf_attrs1, :growth_fields=>pct_ch_fields}
+        = render :partial=>"stocks/fin_stmt", :locals=>{:stmts=>stock.calcs_annual,:attrs=>calc_attrs, :growth_fields=>pct_ch_fields}
+        = render :partial=>"stocks/fin_stmt", :locals=>{:stmts=>stock.cf_annual,:attrs=>cf_attrs2, :growth_fields=>pct_ch_fields}
+        = render :partial=>"stocks/fin_stmt", :locals=>{:title=>"#{bs}-A", :stock=>stock,
+                 :period_type=>"annual", :stmt_type=>"balance-sheet",
+                  :stmts=>stock.bs_annual,:attrs=>bs_attrs, :growth_fields=>pct_ch_fields}
+        = render :partial=>"stocks/fin_stmt", :locals=>{:title=>"#{inc}-Q", :stock=>stock,
+                  :period_type=>"quarter", :stmt_type=>"income-statement",
+                  :stmts=>stock.pl_qtr,:attrs=>pl_attrs, :growth_fields=>pct_ch_fields}
+        = render :partial=>"stocks/fin_stmt", :locals=>{:stmts=>stock.cf_qtr,:attrs=>cf_attrs1, :growth_fields=>pct_ch_fields}
+        = render :partial=>"stocks/fin_stmt", :locals=>{:stmts=>stock.calcs_qtr,:attrs=>calc_attrs, :growth_fields=>pct_ch_fields}
+        = render :partial=>"stocks/fin_stmt", :locals=>{:stmts=>stock.cf_qtr,:attrs=>cf_attrs2, :growth_fields=>pct_ch_fields}
+        = render :partial=>"stocks/fin_stmt", :locals=>{:title=>"#{bs}-Q", :stock=>stock,
+                 :period_type=>"quarter", :stmt_type=>"balance-sheet",
+                  :stmts=>stock.bs_qtr,:attrs=>bs_attrs, :growth_fields=>pct_ch_fields}
+    -#%input{:type=>'range', :min=>0, :max=>"2600", :value=>"1300", :step=>"10"}
+    %br
+    .noteslinks
+      =render partial: "stocks/note_link_container", locals: {stock: stock, item_type: "note"}
+      =render partial: "stocks/note_link_container", locals: {stock: stock, item_type: "link", item_path_expr: "item.url"}
+    %br
+    .nl_viewer

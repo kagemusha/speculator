@@ -1,13 +1,17 @@
 - if stmts.length > 0
-  - red_green_attrs = [:m_cashflow, :net_eq]
+  - red_green_attrs = [:m_cashflow, :net_tang_eq]
   - st = stmts[0]
   - cur = st.currency
   - units = st.units
   %table.fin_stmt
-    - if title
+    - if defined? title
+      - wsj_original_stmt = "http://quotes.wsj.com/#{stock.symbol}/financials/#{period_type}/#{stmt_type}"
       %tr
         %th.type
-          %strong #{title}
+          /%strong=link_to(title, wsj_original_stmt, :target=>"_blank")
+          - url = "http://quotes.wsj.com/#{stock.symbol}/financials/#{period_type}/#{stmt_type}"
+          - #url = "http://quotes.wsj.com/ANR/financials/annual/income-statement"
+          %strong=link_to(title, url, :target=>"_blank")
           %span.units #{cur}#{units ? "-#{units[0]}" : ""}
         - stmts.each do |st|
           %th.val.date=st.period_end.strftime("%Y-%m")

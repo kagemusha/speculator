@@ -16,6 +16,7 @@ class ProfileDataScraper
     stock.industry = data_hash["Industry"]
     stock.sector = data_hash["Sector"]
     stock.competitors = page.css("ul#competitors_Tab li a").collect {|item| item.content }
+    stock.competitors.pop
     stock.save
     data_hash
   end

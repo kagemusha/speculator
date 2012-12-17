@@ -3,14 +3,18 @@ class Stock
   include Mongoid::Timestamps
   has_many :new_lows, :order=>:date.desc
   has_many :opinions
-  embeds_many :balance_sheets
-  embeds_many :income_statements
-  embeds_many :cashflow_statements
+  embeds_many :balance_sheets, :order=>:period_end.desc
+  embeds_many :income_statements, :order=>:period_end.desc
+  embeds_many :cashflow_statements, :order=>:period_end.desc
   embeds_many :fin_calcs
+  embeds_many :notes
+  embeds_many :links
   accepts_nested_attributes_for :balance_sheets
   accepts_nested_attributes_for :income_statements
   accepts_nested_attributes_for :cashflow_statements
   accepts_nested_attributes_for :fin_calcs
+  accepts_nested_attributes_for :notes
+  accepts_nested_attributes_for :links
 
   field :symbol, type: String
   field :current_data, type: Hash
@@ -134,6 +138,13 @@ class Stock
     last_opinion.no_current_interest
   end
 
+  #net_tang_eq - mkt_cap
+  def tang_eq_surplus
+    return nil if (latest_bs ||= balance_sheets.first) == nil
+    return nil if (latest_tang_eq ||= latest_bs.net_tang_eq) == nil
+    return nil if !current_data["mkt cap"]
+    latest_tang_eq - current_data["mkt cap"]
+  end
 
   #def valid_short_target?
   #  valid_mkt_cap? and valid_price? and target_sector?

@@ -1,6 +1,8 @@
 class HomeController < ApplicationController
+  p "Hello i'm home controrrer"
 
   def index
+    p MmUtils::msg "this is MMUTILs", "a msgg!!"
     #@last_scrape = Scrape.where label: "mkt_data"
     latest_data = MktDataScraper.scrape_tiles
     #Util.p "@latest_data", latest_data.inspect
@@ -8,12 +10,12 @@ class HomeController < ApplicationController
 
   def mkt_data
     @data = MktDataScraper.scrape
-    Util.p "@data @data @data @data @data @data @data "
-    @data.each_pair {|k,v| Util.p(k,v)}
+    #Util.p "@data @data @data @data @data @data @data "
+    #@data.each_pair {|k,v| Util.p(k,v)}
     @bb_commods = MktDataScraper.scrape_bb_commods
     update_date @data, @bb_commods
-    Util.p "@bb_commods @bb_commods @bb_commods @bb_commods"
-    @bb_commods.each_pair {|k,v| Util.p(k,v)}
+    #Util.p "@bb_commods @bb_commods @bb_commods @bb_commods"
+    #@bb_commods.each_pair {|k,v| Util.p(k,v)}
     @coal_table = CachedObj.coal_table
     render partial: "data_panel", locals: {data: @data}
   end

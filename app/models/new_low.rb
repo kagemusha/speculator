@@ -19,28 +19,4 @@ class NewLow
     self.where :date=>latest_date
   end
 
-  #sample screp
-  #"AUO", "AU Optronics ADS", "3.39", "$3.43", "-0.05", "-1.44", "587,373"
-  def self.find_or_create_from_scrape(date, data)
-    if stock ||= Stock.where(:symbol=>data[0]).first
-      nlo = NewLow.where(:stock=>stock, :date=>date).first
-      return nlo if nlo
-    end
-    create_from_scrape date, data
-  end
-
-  def self.create_from_scrape(date, data)
-    nlo = NewLow.new
-    nlo.date = date
-    nlo.symbol = data[0]
-    nlo.stock = Stock.find_or_create_by :symbol=>nlo.symbol
-    nlo.company_name = data[1]
-    nlo.new_low_price = data[2]
-    nlo.price = data[3]
-    nlo.chg = data[4]
-    nlo.chg_pct = data[5]
-    nlo.vol = data[6]
-    nlo.save
-    nlo
-  end
 end

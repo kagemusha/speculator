@@ -6,6 +6,7 @@ class Opinion
   field :action, type: String
   field :price, type: Float
   field :killer, type: String
+  field :hidden_treasure, type: String
   field :catalyst, type: String #generally pos
   field :sales_comments, type: String
   field :pl_comments, type: String

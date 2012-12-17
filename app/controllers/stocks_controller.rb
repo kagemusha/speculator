@@ -2,30 +2,26 @@
 class StocksController < ApplicationController
 
 
-  #def show
-  #  @symbol = params[:symbol]
-  #  Util.p "show stockz", params
-  #  @stock = Stock.where(:symbol=>@symbol).first
-  #  StockScrape.get_stock_data(@stock) if !@stock.exch
-  #  Util.p "curdatacur?",@stock.current_data_current?, @stock.current_data
-  #  if @stock.current_data_current?
-  #    @current_data = @stock.current_data
-  #  else
-  #    @current_data = StockScrape.get_basic_data(@stock)
-  #    @stock.update_attribute(:current_data, @current_data)
-  #  end
-  #end
+  def show
+    get_stock_and_symbol(params)
+    #handle is !symbol
+    StockScrape.get_stock_data(@stock) if !@stock.exch
+    Util.p "curdatacur?",@stock.current_data_current?, @stock.current_data
+    if @stock.current_data_current?
+      @current_data = @stock.current_data
+    else
+      @current_data = StockScrape.get_basic_data(@stock)
+      @stock.update_attribute(:current_data, @current_data)
+    end
+  end
 
   def show_partial
-    @symbol = params[:symbol]
+    get_stock_and_symbol(params)
     Pusher['channel'].trigger('scrape-symbol-event', {:message => "scrape event for #{@symbol}"})
     if @symbol.blank?
       render :text=>"Please enter a symbol"
       return
     end
-    @symbol.upcase!
-    Util.p "stocks/partial", @symbol
-    @stock = Stock.where(:symbol=>@symbol).first || StockScrape.scrape_symbol(@symbol)
     [0..3].each do |i|
       #begin
       if !@stock.exch or params[:update] or params[:force]
@@ -90,5 +86,16 @@ class StocksController < ApplicationController
   #  end
   #  render :partial=>"stocks/show", :locals=>{:symbol=>@symbol,:stock=>@stock, :cur_data=>@stock.current_data}
   #end
+
+  private
+
+  def get_stock_and_symbol(params)
+    @symbol = params[:symbol]
+    return if !@symbol
+    @symbol.upcase!
+    @stock = Stock.where(:symbol=>@symbol).first || StockScrape.scrape_symbol(@symbol)
+  end
+
+
 
 end
